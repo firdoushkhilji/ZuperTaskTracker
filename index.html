@@ -27,7 +27,7 @@
     }
 
     .task h3 {
-      margin: 0 0 10px;
+      margin: 0;
       color: #1a75cf;
     }
 
@@ -149,21 +149,45 @@
       <h4>Mid American Gunite Pools</h4>
       <p>Status: <span class="status-closed"> ✅ Done</span></p>
     </div>
+    <!-- Task Card -->
+<div class="task" onclick="showModal('taskModal4')">
+    <h3>Automatic assigning of jobs to route</h3>
+    <h4>Mid American Gunite Pools</h4>
+    <p>Status: ✅ Done</p>
   </div>
+  <div class="task" onclick="showModal('taskModal5')">
+    <h3>Contract Automation updates</h3>
+    <h4>Mid American Gunite Pools</h4>
+    <p>Status: ✅ Done</p>
+</div>
+<div class="task" onclick="showModal('taskModal6')">
+  <h3>Custom Report: Job chronological order</h3>
+  <h4>Proper PH Pools</h4>
+  <p>Status: <span class="status-on-hold">⏸ On Hold</span></p>
+</div>
+<div class="task" onclick="showModal('taskModal7')">
+  <h3>Custom Scheduling Page with Widget</h3>
+  <h4>Wesgroup</h4>
+  <p>Status: ✅ Done</p>
+</div>
+
+
+  </div>
+  
 
   <!-- Modal 1 -->
   <div class="modal" id="taskModal1">
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal1')">&times;</span>
-
-      <h1>Custom Report: Job chronological order</h1>
-      <p>We have a report that shows how much time technicians spend on jobs. Now,<br>
-      We need to make a <strong>cleaner and more organized version</strong>.</p>
-
-      <h3>Here's What We Need to Do:</h3>
-
+  
+      <h1>📊 Custom Report: Job chronological order</h1>
+      <p>🧾 We have a report that shows how much time technicians spend on jobs. Now,<br>
+      we need to make a <strong>cleaner and more organized version</strong>.</p>
+  
+      <h3>🔧 Here's What We Need to Do:</h3>
+  
       <div class="section step">
-        <strong>1. Remove 3 columns:</strong> Job Category, Current Job Status, and Customer
+        <strong>1️⃣ Remove 3 columns:</strong> 🗃️ Job Category, 📌 Current Job Status, and 👤 Customer
         <table>
           <tr>
             <th>Job Category</th>
@@ -177,120 +201,282 @@
           </tr>
         </table>
       </div>
-
+  
       <div class="section step">
-        <strong>2. One sheet per technician:</strong>
-        <div class="sub-bullet">○ One Sheet for each technician with their work.</div>
+        <strong>2️⃣ One sheet per technician:</strong>
+        <div class="sub-bullet">📄 One Sheet for each technician with their work.</div>
       </div>
-
+  
       <div class="section step">
-        <strong>3. Group the data:</strong>
+        <strong>3️⃣ Group the data:</strong>
         <div class="sub-bullet">
-          ○ Group Data First by <strong>Job Title</strong> and then sub group Data in <strong>Travel</strong> and <strong>Work type</strong>.
+          📂 Group by <strong>Job Title</strong> → subgroup by <strong>Travel</strong> & <strong>Work type</strong>
         </div>
       </div>
-
+  
       <div class="section step">
-        <strong>4. Show time spent:</strong>
+        <strong>4️⃣ Show time spent:</strong>
         <div class="sub-bullet">
-          ○ Show how much time was spent on each job<br>
-          ○ Also show the <strong>total time</strong> for each Job Title
+          ⏱️ Show time spent on each job<br>
+          ➕ Show <strong>total time</strong> for each Job Title
         </div>
       </div>
-
+  
       <div class="section step">
-        <strong>5. Keep the rest:</strong><br>
-        <span class="tick">✔</span> Don’t touch the other columns — just leave them as they are.
+        <strong>5️⃣ Keep the rest:</strong><br>
+        <span class="tick">✔</span> Leave other columns unchanged.
       </div>
+      
     </div>
   </div>
+  
 
   <!-- Modal 2 -->
   <div class="modal" id="taskModal2">
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal2')">&times;</span>
   
-      <h1>Booking Widget - Define Slot Range in Job Details</h1>
+      <h1>📅 Booking Widget - Define Slot Range in Job Details</h1>
   
       <div class="section step">
-        <strong>Description:</strong><br>
-        As per customer use case, Pro/Tech needs to send a booking link to the customer so they can pick a slot and plan the work schedule.
+        <strong>📝 Description:</strong><br>
+        Pro/Tech sends a booking link so customers can pick a slot and plan work.
       </div>
   
-      <h3>Goal:</h3>
-      <p>Make the booking link smarter by using the estimated time required for each job.</p>
+      <h3>🎯 Goal:</h3>
+      <p>Make the booking link smarter using job's estimated time.</p>
   
-      <h3>What We Need to Do:</h3>
-  
-      <div class="section step">
-        <strong>1. Add job duration field:</strong><br>
-        <div class="sub-bullet">○ While creating a job, technician should enter expected duration (e.g., 2 hrs).</div>
-      </div>
+      <h3>🔧 What We Need to Do:</h3>
   
       <div class="section step">
-        <strong>2. Use it in booking link:</strong><br>
-        <div class="sub-bullet">○ When sharing the booking link with the customer, only available slots that match the job duration should be shown.</div>
+        <strong>1️⃣ Add job duration field:</strong><br>
+        <div class="sub-bullet">🕐 Tech enters expected duration (e.g., 2 hrs) when creating a job.</div>
       </div>
   
       <div class="section step">
-        <strong>3. Automate slot display:</strong><br>
-        <div class="sub-bullet">○ Booking system should block time on calendar based on the job duration.</div>
+        <strong>2️⃣ Use it in booking link:</strong><br>
+        <div class="sub-bullet">🔗 Show only slots matching job duration when link is shared.</div>
       </div>
   
       <div class="section step">
-        <strong>4. Result:</strong><br>
+        <strong>3️⃣ Automate slot display:</strong><br>
+        <div class="sub-bullet">🗓️ Block calendar time based on job duration.</div>
+      </div>
+  
+      <div class="section step">
+        <strong>4️⃣ Result:</strong><br>
         <div class="sub-bullet">
-          ✅ Customer books accurate time slots<br>
+          ✅ Accurate bookings<br>
           ✅ No overbooking<br>
-          ✅ Scheduling becomes easy
+          ✅ Easy scheduling
         </div>
       </div>
     </div>
   </div>
+  
 
   <!-- Modal 3 -->
-<div class="modal" id="taskModal3">
+  <div class="modal" id="taskModal3">
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal3')">&times;</span>
   
-      <h1>Auto - Renew Service Contract</h1>
+      <h1>🔁 Auto - Renew Service Contract</h1>
   
-      <h3>Description:</h3>
-      <p><strong>Requirement:</strong><br>
-        Based on the Expiry date of the Service Contract, we need to renew the service contract 30 days before the expiry date.<br>
-        Need to renew the contract for the same term.
+      <h3>📝 Description:</h3>
+      <p><strong>📌 Requirement:</strong><br>
+        Renew service contracts automatically 30 days before expiry, for the same term.
       </p>
   
-      <h3>What We Need to Do:</h3>
+      <h3>🔧 What We Need to Do:</h3>
   
       <div class="section step">
-        <strong>1. Check the Service Contract Expiry Date:</strong><br>
-        <div class="sub-bullet">○ Identify the expiry date of the service contract.</div>
+        <strong>1️⃣ Check the Expiry Date:</strong><br>
+        <div class="sub-bullet">📅 Identify expiry date of the contract.</div>
       </div>
   
       <div class="section step">
-        <strong>2. Set a Reminder 30 Days Prior:</strong><br>
-        <div class="sub-bullet">○ Set a reminder system to notify 30 days before the expiry date.</div>
+        <strong>2️⃣ Set a Reminder 30 Days Prior:</strong><br>
+        <div class="sub-bullet">⏰ Notify 30 days before expiration.</div>
       </div>
   
       <div class="section step">
-        <strong>3. Renewal Process:</strong><br>
-        <div class="sub-bullet">○ Automatically initiate the renewal process for the contract 30 days before expiry.</div>
+        <strong>3️⃣ Renewal Process:</strong><br>
+        <div class="sub-bullet">🔄 Auto-initiate contract renewal 30 days before expiry.</div>
       </div>
   
       <div class="section step">
-        <strong>4. Keep the Same Terms:</strong><br>
-        <div class="sub-bullet">○ Renew the contract for the same terms as the original contract.</div>
+        <strong>4️⃣ Keep the Same Terms:</strong><br>
+        <div class="sub-bullet">📝 Renew using same terms as original contract.</div>
       </div>
   
       <div class="section step">
-        <strong>5. Update Records:</strong><br>
-        <div class="sub-bullet">○ Update the system to reflect the renewed service contract details.</div>
+        <strong>5️⃣ Update Records:</strong><br>
+        <div class="sub-bullet">💾 Update system with new contract details.</div>
       </div>
-  
     </div>
   </div>
   
+
+<!-- Modal 4 -->
+<div class="modal" id="taskModal4">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal4')">&times;</span>
+
+    <h1>🛣️ Auto-Assign Jobs to Route</h1>
+
+    <p><strong>📌 Task Description:</strong><br>
+      Automatically assign recurring jobs to a route based on the selected "Route Name" during contract creation.
+    </p>
+
+    <p><strong>🔧 What happens?</strong><br>
+      When a contract is created, user selects a <strong>Route Name</strong> → all recurring jobs auto-assign to that route.
+    </p>
+
+    <h3>⚙️ Steps:</h3>
+    <ul>
+      <li>📝 Contract created</li>
+      <li>📍 Route Name selected</li>
+      <li>🚀 Trigger runs: “Contract create”</li>
+      <li>🔁 Jobs auto-assigned to that route</li>
+      <li>👀 Route shown in job details</li>
+    </ul>
+
+    <h3>✅ Result:</h3>
+    <p>
+      No manual work. Clean route scheduling. Time saved!
+    </p>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal" id="taskModal5">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal5')">&times;</span>
+
+    <h1>📑 Contract Automation Updates</h1>
+
+    <h3>📜 Description:</h3>
+    <p>If 'Pool Opening' is 'Yes', first job is 'Pool Opening'. If 'No', jobs start from the contract start. Users can add 'Pool Closing' job with a selected date.</p>
+
+    <h3>🧩 Case 1: At Creation</h3>
+    <ul>
+      <li>📅 If dates match, create "Pool Closing" job, update expiry, delete future jobs, deactivate contract.</li>
+    </ul>
+
+    <h3>🧩 Case 2: During Contract</h3>
+    <ul>
+      <li>📅 User selects a date ≥ current date. Scheduler updates and deactivates contract.</li>
+    </ul>
+
+    <h3>📏 Edge Case: Closing Date Beyond Expiry</h3>
+    <ul>
+      <li>📅 Update expiry, create remaining jobs, deactivate contract after new date.</li>
+    </ul>
+
+    <h3>🎯 Focus:</h3>
+    <p>Automate Pool Opening and Closing, ensuring smooth scheduling and contract management.</p>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="modal" id="taskModal6">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal6')">&times;</span>
+
+    <h1>💳 Solution Request - One80 Integration</h1>
+
+    <h3>📜 Description:</h3>
+    <p>Integrate with One80 for tracking credit card payments on quotes and invoices. Feasibility check required.</p>
+
+    <h3>🔧 Integration Details:</h3>
+    <table>
+      <tr><th>Details</th><th>Information</th></tr>
+      <tr><td>Payment Processing</td><td>CardPointe API (ACH/Credit Card)</td></tr>
+      <tr><td>API URL</td><td><a href="https://fts-uat.cardconnect.com/cardconnect/rest/" target="_blank">CardPointe API</a></td></tr>
+      <tr><td>Reporting Tool</td><td><a href="https://cardpointe-uat.cardconnect.com" target="_blank">Reporting Tool</a></td></tr>
+      <tr><td>Test Credentials</td><td>Username: testing, Password: testing123, MID: 800000009563</td></tr>
+      <tr><td>Tokenization</td><td>Embedded iFrame tokenizer for card data</td></tr>
+    </table>
+
+    <h3>🔄 Flow:</h3>
+    <ul>
+      <li>1️⃣ Check feasibility for integration</li>
+      <li>2️⃣ Access API and Reporting Tool</li>
+      <li>3️⃣ Test credentials</li>
+      <li>4️⃣ Verify tokenization and payment tracking</li>
+    </ul>
+
+    <h3>🎯 Goal:</h3>
+    <p>Determine if One80 payment tracking can integrate with our platform.</p>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div class="modal" id="taskModal7">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal7')">&times;</span>
+
+    <h1>📅 Custom Scheduling Page with Widget</h1>
+
+    <h3>📜 Description:</h3>
+    <p>Create a custom scheduling page with an embedded widget to let customers schedule jobs using a unique link.</p>
+
+    <h3>🔧 Requirements:</h3>
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>Trigger</th>
+        <td>Generate unique scheduling link when a new job is created.</td>
+      </tr>
+      <tr>
+        <th>Design</th>
+        <td>Match attached design; include scheduling widget.</td>
+      </tr>
+      <tr>
+        <th>Slot Selection</th>
+        <td>Allow slot selection based on user availability.</td>
+      </tr>
+      <tr>
+        <th>Duration</th>
+        <td>Set by custom "Slot duration" field (e.g., 30 min, 60 min).</td>
+      </tr>
+      <tr>
+        <th>Confirmation</th>
+        <td>Lock slot after selection; disable link after confirmation.</td>
+      </tr>
+      <tr>
+        <th>Notifications</th>
+        <td>Send confirmation emails for booking and link sent.</td>
+      </tr>
+    </table>
+
+    <h3>📊 Slot Selection Flow:</h3>
+    <div style="text-align:center;">
+      <img src="https://via.placeholder.com/600x350?text=Slot+Selection+Flowchart" alt="Slot Selection Flowchart" />
+    </div>
+
+    <h3>🎯 Slot Logic:</h3>
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>Due Date</th>
+        <td>Last available selection date.</td>
+      </tr>
+      <tr>
+        <th>Start Date</th>
+        <td>First available date or when status is "Scheduling by Customer".</td>
+      </tr>
+      <tr>
+        <th>Assigned User Availability</th>
+        <td>Slots shown based on user calendar.</td>
+      </tr>
+    </table>
+
+    <h3>🎯 Goal:</h3>
+    <p>Enable customers to schedule jobs based on available slots, ensuring smooth job management.</p>
+  </div>
+</div>
+
+
+
   
 
   <script>
