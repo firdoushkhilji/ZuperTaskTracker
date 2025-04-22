@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Task Tracker</title>
   <style>
     body {
@@ -21,7 +22,7 @@
       background: #fff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       cursor: pointer;
       width: 100%;
     }
@@ -34,8 +35,10 @@
     .modal {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
@@ -55,7 +58,8 @@
 
     .close {
       position: absolute;
-      top: 10px; right: 15px;
+      top: 10px;
+      right: 15px;
       font-size: 24px;
       font-weight: bold;
       cursor: pointer;
@@ -71,7 +75,8 @@
       width: 100%;
     }
 
-    th, td {
+    th,
+    td {
       border: 2px solid #000;
       padding: 8px;
       text-align: center;
@@ -126,66 +131,215 @@
     .status-closed {
       color: #2196F3;
     }
+
+    .task-id {
+      color: rgb(14, 0, 76);
+      font-weight: bold;
+    }
   </style>
 </head>
+
 <body>
 
-  <h2>🗂 My Tasks</h2>
+
+
+  <h2 style="text-align: center; font-size: 40px;">Zuper Tasks</h2>
   <div class="task-list">
     <div class="task" onclick="showModal('taskModal1')">
-      <h3>Custom Report: Job chronological order</h3>
-      <h4>Proper PH Pools</h4>
-      <p>Status: <span class="status-on-hold">⏸ On Hold</span></p>
+      <h3>Task No.: 1<br><span class="task-id">ZU-1122</span> Custom Report: Job chronological order</h3>
+      <h4>Proper PH Pools (Proper pH)</h4>
+      <p>Status: ⏸ On Hold</p>
     </div>
 
     <div class="task" onclick="showModal('taskModal2')">
-      <h3>Booking Widget - Define slot range</h3>
-      <h4>Shamrock Property Maintenance</h4>
-      <p>Status: <span class="status-done">✅ Done</span></p>
+      <h3>Task No.: 2<br><span class="task-id">ZU-1162</span> Booking Widget - Can we define the slot range in Job details</h3>
+      <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
+      <p>Status: ✅ Done</p>
     </div>
 
     <div class="task" onclick="showModal('taskModal3')">
-      <h3>Auto - Renew Service Contract</h3>
-      <h4>Mid American Gunite Pools</h4>
-      <p>Status: <span class="status-closed"> ✅ Done</span></p>
+      <h3>Task No.: 3<br><span class="task-id">ZU-1169</span> Auto - renew Service Contract</h3>
+      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
+      <p>Status: ✅ Done</p>
     </div>
-    <!-- Task Card -->
-<div class="task" onclick="showModal('taskModal4')">
-    <h3>Automatic assigning of jobs to route</h3>
-    <h4>Mid American Gunite Pools</h4>
-    <p>Status: ✅ Done</p>
-  </div>
-  <div class="task" onclick="showModal('taskModal5')">
-    <h3>Contract Automation updates</h3>
-    <h4>Mid American Gunite Pools</h4>
-    <p>Status: ✅ Done</p>
-</div>
-<div class="task" onclick="showModal('taskModal6')">
-  <h3>Custom Report: Job chronological order</h3>
-  <h4>Proper PH Pools</h4>
-  <p>Status: <span class="status-on-hold">⏸ On Hold</span></p>
-</div>
-<div class="task" onclick="showModal('taskModal7')">
-  <h3>Custom Scheduling Page with Widget</h3>
-  <h4>Wesgroup</h4>
-  <p>Status: ✅ Done</p>
+
+    <div class="task" onclick="showModal('taskModal4')">
+      <h3>Task No.: 4<br><span class="task-id">ZU-1169</span> Automatic assigning of jobs to route</h3>
+      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal5')">
+      <h3>Task No.: 5<br><span class="task-id">ZU-1169</span> Contract Automation updates</h3>
+      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal6')">
+      <h3>Task No.: 6<br><span class="task-id">N/A</span> Custom Integration - One80 - Refunds</h3>
+      <h4>Proper PH Pools (Brother gutters)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal7')">
+      <h3>Task No.: 7<br><span class="task-id">ZU-1095</span> Custom Scheduling page with widget</h3>
+      <h4>Wesgroup (Wesgroup)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal8')">
+      <h3>Task No.: 8<br><span class="task-id">ZU-968</span> Change Request for the above Report</h3>
+      <h4>Love's Travel Stops & Country Stores (Loves-travel-stops)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal9')">
+      <h3>Task No.: 9<br><span class="task-id">ZU-1162</span> Update in Assignment Process</h3>
+      <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal10')">
+      <h3>Task No.: 10<br><span class="task-id">ZU-717</span> Bug - Reverse update not working</h3>
+      <h4>Wetility Pty Ltd (Wetility)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal11')">
+      <h3>Task No.: 11<br><span class="task-id">ZU-717</span> Change Request - Plentify notification after Site Inspection completed</h3>
+      <h4>Wetility Pty Ltd (Wetility)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal12')">
+      <h3>Task No.: 12<br><span class="task-id">ZU-1162</span> Job status update Automations</h3>
+      <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal13')">
+      <h3>Task No.: 13<br><span class="task-id">ZU-1162</span> Feedback survey post work completion</h3>
+      <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
+      <p>Status: 🧪 Testing</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal14')">
+      <h3>Task No.: 14<br><span class="task-id">ZU-717</span> Custom Work - Notification when reverse update happens</h3>
+      <h4>Wetility Pty Ltd (Wetility)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal15')">
+      <h3>Task No.: 15<br><span class="task-id">ZU-717</span> Custom Work - Fetching value of CSM Owner</h3>
+      <h4>Wetility Pty Ltd (Wetility)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal16')">
+      <h3>Task No.: 16<br><span class="task-id">ZU-1169</span> Consolidated invoice (Drain and Clean 1 - Job category)</h3>
+      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal17')">
+      <h3>Task No.: 17<br><span class="task-id">ZU-1169</span> [BUG] Auto- renew Service Contract</h3>
+      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal18')">
+      <h3>Task No.: 18<br><span class="task-id">ZU-914</span> Vin Decoding</h3>
+      <h4>Esl Solution (ESL Solution)</h4>
+      <p>Status: 📋 Backlog</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal19')">
+      <h3>Task No.: 19<br><span class="task-id">ZU-717</span> Bug - Site Inspection report email attachment corrupted or blank</h3>
+      <h4>Wetility Pty Ltd (Wetility)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal20')">
+      <h3>Task No.: 20<br><span class="task-id">ZU-1063</span> Property field Automations</h3>
+      <h4>Sylmar Group (EAI)</h4>
+      <p>Status: 📋 Backlog</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal21')">
+      <h3>Task No.: 21<br><span class="task-id">ZU-1169</span> Custom work: Update the job notes with Associated property Notes</h3>
+      <h4>Mid American Gunite Pools (Meadowbrook)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal22')">
+      <h3>Task No.: 22<br><span class="task-id">ZU-854</span> Custom UI and Automation: Parts custom field edit</h3>
+      <h4>Meadowbrook (Meadowbrook)</h4>
+      <p>Status: ⏸ On Hold</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal23')">
+      <h3>Task No.: 23<br><span class="task-id">ZU-709</span> Custom Report- V3</h3>
+      <h4>NC Equipment Solutions (NC Equipment Solutions)</h4>
+      <p>Status: 📋 Backlog</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal24')">
+      <h3>Task No.: 24<br><span class="task-id">ZU-854</span> Custom report - Quote (Sent Quotes)</h3>
+      <h4>Meadowbrook (Meadowbrook)</h4>
+      <p>Status: ⏸ On Hold</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal25')">
+      <h3>Task No.: 25<br><span class="task-id">ZU-854</span> Custom Report - Quote approved and associated work order based on Business Unit</h3>
+      <h4>Meadowbrook (Meadowbrook)</h4>
+      <p>Status: ⏸ On Hold</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal26')">
+      <h3>Task No.: 26<br><span class="task-id">ZU-1075</span> Officient<>Zuper Integration</h3>
+      <h4>Becosoft (Becosoft)</h4>
+      <p>Status: ⏸ On Hold</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal27')">
+      <h3>Task No.: 27<br><span class="task-id">ZU-717</span> Change Request - Additional changes on the document</h3>
+      <h4>Wetility Pty Ltd (Wetility)</h4>
+      <p>Status: 📋 Backlog</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal28')">
+      <h3>Task No.: 28<br><span class="task-id">ZU-854</span> Custom Report - Quotes Quarterly and Monthly</h3>
+      <h4>Meadowbrook (Meadowbrook)</h4>
+      <p>Status: ⏸ On Hold</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal29')">
+      <h3>Task No.: 29<br><span class="task-id">ZU-1095</span> Changes Needed in the scheduling widget</h3>
+      <h4>Wesgroup (Wesgroup)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
+
+    <div class="task" onclick="showModal('taskModal30')">
+      <h3>Task No.: 30<br><span class="task-id">ZU-1169</span> Update the Customer notes</h3>
+      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
+      <p>Status: ✅ Done</p>
+    </div>
 </div>
 
 
-  </div>
-  
+
 
   <!-- Modal 1 -->
   <div class="modal" id="taskModal1">
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal1')">&times;</span>
-  
+
       <h1>📊 Custom Report: Job chronological order</h1>
       <p>🧾 We have a report that shows how much time technicians spend on jobs. Now,<br>
-      we need to make a <strong>cleaner and more organized version</strong>.</p>
-  
+        we need to make a <strong>cleaner and more organized version</strong>.</p>
+
       <h3>🔧 Here's What We Need to Do:</h3>
-  
+
       <div class="section step">
         <strong>1️⃣ Remove 3 columns:</strong> 🗃️ Job Category, 📌 Current Job Status, and 👤 Customer
         <table>
@@ -201,19 +355,19 @@
           </tr>
         </table>
       </div>
-  
+
       <div class="section step">
         <strong>2️⃣ One sheet per technician:</strong>
         <div class="sub-bullet">📄 One Sheet for each technician with their work.</div>
       </div>
-  
+
       <div class="section step">
         <strong>3️⃣ Group the data:</strong>
         <div class="sub-bullet">
           📂 Group by <strong>Job Title</strong> → subgroup by <strong>Travel</strong> & <strong>Work type</strong>
         </div>
       </div>
-  
+
       <div class="section step">
         <strong>4️⃣ Show time spent:</strong>
         <div class="sub-bullet">
@@ -221,48 +375,48 @@
           ➕ Show <strong>total time</strong> for each Job Title
         </div>
       </div>
-  
+
       <div class="section step">
         <strong>5️⃣ Keep the rest:</strong><br>
         <span class="tick">✔</span> Leave other columns unchanged.
       </div>
-      
+
     </div>
   </div>
-  
+
 
   <!-- Modal 2 -->
   <div class="modal" id="taskModal2">
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal2')">&times;</span>
-  
+
       <h1>📅 Booking Widget - Define Slot Range in Job Details</h1>
-  
+
       <div class="section step">
         <strong>📝 Description:</strong><br>
         Pro/Tech sends a booking link so customers can pick a slot and plan work.
       </div>
-  
+
       <h3>🎯 Goal:</h3>
       <p>Make the booking link smarter using job's estimated time.</p>
-  
+
       <h3>🔧 What We Need to Do:</h3>
-  
+
       <div class="section step">
         <strong>1️⃣ Add job duration field:</strong><br>
         <div class="sub-bullet">🕐 Tech enters expected duration (e.g., 2 hrs) when creating a job.</div>
       </div>
-  
+
       <div class="section step">
         <strong>2️⃣ Use it in booking link:</strong><br>
         <div class="sub-bullet">🔗 Show only slots matching job duration when link is shared.</div>
       </div>
-  
+
       <div class="section step">
         <strong>3️⃣ Automate slot display:</strong><br>
         <div class="sub-bullet">🗓️ Block calendar time based on job duration.</div>
       </div>
-  
+
       <div class="section step">
         <strong>4️⃣ Result:</strong><br>
         <div class="sub-bullet">
@@ -273,217 +427,983 @@
       </div>
     </div>
   </div>
-  
+
 
   <!-- Modal 3 -->
   <div class="modal" id="taskModal3">
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal3')">&times;</span>
-  
+
       <h1>🔁 Auto - Renew Service Contract</h1>
-  
+
       <h3>📝 Description:</h3>
       <p><strong>📌 Requirement:</strong><br>
         Renew service contracts automatically 30 days before expiry, for the same term.
       </p>
-  
+
       <h3>🔧 What We Need to Do:</h3>
-  
+
       <div class="section step">
         <strong>1️⃣ Check the Expiry Date:</strong><br>
         <div class="sub-bullet">📅 Identify expiry date of the contract.</div>
       </div>
-  
+
       <div class="section step">
         <strong>2️⃣ Set a Reminder 30 Days Prior:</strong><br>
         <div class="sub-bullet">⏰ Notify 30 days before expiration.</div>
       </div>
-  
+
       <div class="section step">
         <strong>3️⃣ Renewal Process:</strong><br>
         <div class="sub-bullet">🔄 Auto-initiate contract renewal 30 days before expiry.</div>
       </div>
-  
+
       <div class="section step">
         <strong>4️⃣ Keep the Same Terms:</strong><br>
         <div class="sub-bullet">📝 Renew using same terms as original contract.</div>
       </div>
-  
+
       <div class="section step">
         <strong>5️⃣ Update Records:</strong><br>
         <div class="sub-bullet">💾 Update system with new contract details.</div>
       </div>
     </div>
   </div>
-  
 
-<!-- Modal 4 -->
-<div class="modal" id="taskModal4">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal4')">&times;</span>
 
-    <h1>🛣️ Auto-Assign Jobs to Route</h1>
+  <!-- Modal 4 -->
+  <div class="modal" id="taskModal4">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal4')">&times;</span>
 
-    <p><strong>📌 Task Description:</strong><br>
-      Automatically assign recurring jobs to a route based on the selected "Route Name" during contract creation.
-    </p>
+      <h1>🛣️ Auto-Assign Jobs to Route</h1>
 
-    <p><strong>🔧 What happens?</strong><br>
-      When a contract is created, user selects a <strong>Route Name</strong> → all recurring jobs auto-assign to that route.
-    </p>
+      <p><strong>📌 Task Description:</strong><br>
+        Automatically assign recurring jobs to a route based on the selected "Route Name" during contract creation.
+      </p>
 
-    <h3>⚙️ Steps:</h3>
-    <ul>
-      <li>📝 Contract created</li>
-      <li>📍 Route Name selected</li>
-      <li>🚀 Trigger runs: “Contract create”</li>
-      <li>🔁 Jobs auto-assigned to that route</li>
-      <li>👀 Route shown in job details</li>
-    </ul>
+      <p><strong>🔧 What happens?</strong><br>
+        When a contract is created, user selects a <strong>Route Name</strong> → all recurring jobs auto-assign to that
+        route.
+      </p>
 
-    <h3>✅ Result:</h3>
-    <p>
-      No manual work. Clean route scheduling. Time saved!
-    </p>
+      <h3>⚙️ Steps:</h3>
+      <ul>
+        <li>📝 Contract created</li>
+        <li>📍 Route Name selected</li>
+        <li>🚀 Trigger runs: “Contract create”</li>
+        <li>🔁 Jobs auto-assigned to that route</li>
+        <li>👀 Route shown in job details</li>
+      </ul>
+
+      <h3>✅ Result:</h3>
+      <p>
+        No manual work. Clean route scheduling. Time saved!
+      </p>
+    </div>
   </div>
-</div>
 
-<!-- Modal 5 -->
-<div class="modal" id="taskModal5">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal5')">&times;</span>
+  <!-- Modal 5 -->
+  <div class="modal" id="taskModal5">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal5')">&times;</span>
 
-    <h1>📑 Contract Automation Updates</h1>
+      <h1>📑 Contract Automation Updates</h1>
 
-    <h3>📜 Description:</h3>
-    <p>If 'Pool Opening' is 'Yes', first job is 'Pool Opening'. If 'No', jobs start from the contract start. Users can add 'Pool Closing' job with a selected date.</p>
+      <h3>📜 Description:</h3>
+      <p>If 'Pool Opening' is 'Yes', first job is 'Pool Opening'. If 'No', jobs start from the contract start. Users can
+        add 'Pool Closing' job with a selected date.</p>
 
-    <h3>🧩 Case 1: At Creation</h3>
-    <ul>
-      <li>📅 If dates match, create "Pool Closing" job, update expiry, delete future jobs, deactivate contract.</li>
-    </ul>
+      <h3>🧩 Case 1: At Creation</h3>
+      <ul>
+        <li>📅 If dates match, create "Pool Closing" job, update expiry, delete future jobs, deactivate contract.</li>
+      </ul>
 
-    <h3>🧩 Case 2: During Contract</h3>
-    <ul>
-      <li>📅 User selects a date ≥ current date. Scheduler updates and deactivates contract.</li>
-    </ul>
+      <h3>🧩 Case 2: During Contract</h3>
+      <ul>
+        <li>📅 User selects a date ≥ current date. Scheduler updates and deactivates contract.</li>
+      </ul>
 
-    <h3>📏 Edge Case: Closing Date Beyond Expiry</h3>
-    <ul>
-      <li>📅 Update expiry, create remaining jobs, deactivate contract after new date.</li>
-    </ul>
+      <h3>📏 Edge Case: Closing Date Beyond Expiry</h3>
+      <ul>
+        <li>📅 Update expiry, create remaining jobs, deactivate contract after new date.</li>
+      </ul>
 
-    <h3>🎯 Focus:</h3>
-    <p>Automate Pool Opening and Closing, ensuring smooth scheduling and contract management.</p>
+      <h3>🎯 Focus:</h3>
+      <p>Automate Pool Opening and Closing, ensuring smooth scheduling and contract management.</p>
+    </div>
   </div>
-</div>
 
-<!-- Modal 6 -->
-<div class="modal" id="taskModal6">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal6')">&times;</span>
+  <!-- Modal 6 -->
+  <div class="modal" id="taskModal6">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal6')">&times;</span>
 
-    <h1>💳 Solution Request - One80 Integration</h1>
+      <h1>💳 Solution Request - One80 Integration</h1>
 
-    <h3>📜 Description:</h3>
-    <p>Integrate with One80 for tracking credit card payments on quotes and invoices. Feasibility check required.</p>
+      <h3>📜 Description:</h3>
+      <p>Integrate with One80 for tracking credit card payments on quotes and invoices. Feasibility check required.</p>
 
-    <h3>🔧 Integration Details:</h3>
-    <table>
-      <tr><th>Details</th><th>Information</th></tr>
-      <tr><td>Payment Processing</td><td>CardPointe API (ACH/Credit Card)</td></tr>
-      <tr><td>API URL</td><td><a href="https://fts-uat.cardconnect.com/cardconnect/rest/" target="_blank">CardPointe API</a></td></tr>
-      <tr><td>Reporting Tool</td><td><a href="https://cardpointe-uat.cardconnect.com" target="_blank">Reporting Tool</a></td></tr>
-      <tr><td>Test Credentials</td><td>Username: testing, Password: testing123, MID: 800000009563</td></tr>
-      <tr><td>Tokenization</td><td>Embedded iFrame tokenizer for card data</td></tr>
-    </table>
+      <h3>🔧 Integration Details:</h3>
+      <table>
+        <tr>
+          <th>Details</th>
+          <th>Information</th>
+        </tr>
+        <tr>
+          <td>Payment Processing</td>
+          <td>CardPointe API (ACH/Credit Card)</td>
+        </tr>
+        <tr>
+          <td>API URL</td>
+          <td><a href="https://fts-uat.cardconnect.com/cardconnect/rest/" target="_blank">CardPointe API</a></td>
+        </tr>
+        <tr>
+          <td>Reporting Tool</td>
+          <td><a href="https://cardpointe-uat.cardconnect.com" target="_blank">Reporting Tool</a></td>
+        </tr>
+        <tr>
+          <td>Test Credentials</td>
+          <td>Username: testing, Password: testing123, MID: 800000009563</td>
+        </tr>
+        <tr>
+          <td>Tokenization</td>
+          <td>Embedded iFrame tokenizer for card data</td>
+        </tr>
+      </table>
 
-    <h3>🔄 Flow:</h3>
-    <ul>
-      <li>1️⃣ Check feasibility for integration</li>
-      <li>2️⃣ Access API and Reporting Tool</li>
-      <li>3️⃣ Test credentials</li>
-      <li>4️⃣ Verify tokenization and payment tracking</li>
-    </ul>
+      <h3>🔄 Flow:</h3>
+      <ul>
+        <li>1️⃣ Check feasibility for integration</li>
+        <li>2️⃣ Access API and Reporting Tool</li>
+        <li>3️⃣ Test credentials</li>
+        <li>4️⃣ Verify tokenization and payment tracking</li>
+      </ul>
 
-    <h3>🎯 Goal:</h3>
-    <p>Determine if One80 payment tracking can integrate with our platform.</p>
+      <h3>🎯 Goal:</h3>
+      <p>Determine if One80 payment tracking can integrate with our platform.</p>
+    </div>
   </div>
-</div>
 
-<!-- Modal 7 -->
-<div class="modal" id="taskModal7">
+  <!-- Modal 7 -->
+  <div class="modal" id="taskModal7">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal7')">&times;</span>
+
+      <h1>📅 Custom Scheduling Page with Widget</h1>
+
+      <h3>📜 Description:</h3>
+      <p>Create a custom scheduling page with an embedded widget to let customers schedule jobs using a unique link.</p>
+
+      <h3>🔧 Requirements:</h3>
+      <table border="1" cellpadding="10">
+        <tr>
+          <th>Trigger</th>
+          <td>Generate unique scheduling link when a new job is created.</td>
+        </tr>
+        <tr>
+          <th>Design</th>
+          <td>Match attached design; include scheduling widget.</td>
+        </tr>
+        <tr>
+          <th>Slot Selection</th>
+          <td>Allow slot selection based on user availability.</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>Set by custom "Slot duration" field (e.g., 30 min, 60 min).</td>
+        </tr>
+        <tr>
+          <th>Confirmation</th>
+          <td>Lock slot after selection; disable link after confirmation.</td>
+        </tr>
+        <tr>
+          <th>Notifications</th>
+          <td>Send confirmation emails for booking and link sent.</td>
+        </tr>
+      </table>
+
+      <h3>🎯 Slot Logic:</h3>
+      <table border="1" cellpadding="10">
+        <tr>
+          <th>Due Date</th>
+          <td>Last available selection date.</td>
+        </tr>
+        <tr>
+          <th>Start Date</th>
+          <td>First available date or when status is "Scheduling by Customer".</td>
+        </tr>
+        <tr>
+          <th>Assigned User Availability</th>
+          <td>Slots shown based on user calendar.</td>
+        </tr>
+      </table>
+
+      <h3>🎯 Goal:</h3>
+      <p>Enable customers to schedule jobs based on available slots, ensuring smooth job management.</p>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div class="modal" id="taskModal8">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal8')">&times;</span>
+
+      <h1>📊 Custom Report Creation - WO Summary Mapping</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        We need to create a custom report as per the provided file, <em>PM Techs 13 Week WO Summary.xlsx - Report
+          Sheet</em>. The required fields have been highlighted in yellow in the Excel sheet. Below is the mapping of
+        the report fields to Zuper's data fields.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Create a detailed custom report with accurate mappings of the given data fields from the Excel sheet to Zuper.
+      </p>
+
+      <h3>🔧 What We Need to Do:</h3>
+
+      <div class="section step">
+        <strong>1️⃣ Map Excel Fields to Zuper:</strong><br>
+        <div class="sub-bullet">📁 Refer to the Excel file for highlighted fields and match them with Zuper's
+          corresponding fields.</div>
+      </div>
+
+      <div class="section step">
+        <strong>2️⃣ Field Mappings:</strong><br>
+        <div class="sub-bullet">Provider → Assigned FE</div>
+        <div class="sub-bullet">Market → Assigned Team</div>
+        <div class="sub-bullet">Trade → HVAC, Air Compressor, Light, Fuel, Refrigeration</div>
+        <div class="sub-bullet">Location Id → Job title number</div>
+        <div class="sub-bullet">Time Spent on WO → Time Log Summary</div>
+        <div class="sub-bullet">Tr.# → WO number</div>
+        <div class="sub-bullet">Week → Week Duration</div>
+        <div class="sub-bullet">Created By → Job created By</div>
+        <div class="sub-bullet">Location Name → Property name</div>
+        <div class="sub-bullet">Problem Description → Job Description</div>
+      </div>
+
+      <div class="section step">
+        <strong>3️⃣ Create the Report:</strong><br>
+        <div class="sub-bullet">📝 Compile the data based on the mapped fields and generate the custom report.</div>
+      </div>
+
+      <div class="section step">
+        <strong>4️⃣ Result:</strong><br>
+        <div class="sub-bullet">
+          ✅ Custom report successfully generated.<br>
+          ✅ Accurate data mapping.<br>
+          ✅ Ready for production deployment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Task Update -->
+  <div class="modal" id="taskModal9">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal9')">&times;</span>
+
+      <h1>🔄 Update in Assignment Process</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        The task involves updating the assignment process for Shamrock Property Maintenance. The goal is to automate the
+        job assignment to the TL/Owner based on certain criteria, as described below.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Automatically assign jobs to TL/Owner based on specific conditions.</p>
+
+      <h3>🔧 What We Need to Do:</h3>
+
+      <div class="section step">
+        <strong>1️⃣ Trigger for Automation:</strong><br>
+        <div class="sub-bullet">New child job with the status "Ready to Assign".</div>
+      </div>
+
+      <div class="section step">
+        <strong>2️⃣ Criteria for Assignment:</strong><br>
+        <div class="sub-bullet">👤 User role should be TL (Team Lead).</div>
+        <div class="sub-bullet">📍 TL’s zip code should match the service address zip code (Check sample IDs: Zack
+          Dixon, Jorge Perez).</div>
+        <div class="sub-bullet">🛠️ Skillset match between the TL and the job.</div>
+        <div class="sub-bullet">📅 Slot availability within a 5-day window.</div>
+      </div>
+
+      <div class="section step">
+        <strong>3️⃣ Error Handling:</strong><br>
+        <div class="sub-bullet">⚠️ If the assignment fails, notify the Market Manager via email: “Unable to assign a Pro
+          - Urgent Review Needed.”</div>
+      </div>
+
+      <div class="section step">
+        <strong>4️⃣ Impacted Module:</strong><br>
+        <div class="sub-bullet">🛠️ Jobs Module.</div>
+      </div>
+
+      <div class="section step">
+        <strong>5️⃣ Result:</strong><br>
+        <div class="sub-bullet">
+          ✅ Automation successfully updates the assignment process.<br>
+          ✅ Notifications are sent when assignment fails.<br>
+          ✅ Efficient job assignment process.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 10 -->
+  <!-- Modal 10 -->
+  <div class="modal" id="taskModal10">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal10')">&times;</span>
+
+      <h1>🐞 Bug - Reverse Update Not Working</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Reverse updates from Physical Site Inspection → Site Inspection → New-Installation → Deal in FreshSales are
+        failing.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Fix the sync issue to ensure data flows correctly through all stages to FreshSales.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>🔍 Check FreshSales custom integration logic.</li>
+        <li>🗺️ Verify field mappings and API sync points.</li>
+        <li>🛠️ Apply fixes and test reverse update flow.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>All field data updates should reflect properly across stages in FreshSales.</p>
+    </div>
+  </div>
+  <!-- Modal 11 -->
+  <div class="modal" id="taskModal11">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal11')">&times;</span>
+
+      <h1>🔔 Change Request - Plentify Notification</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Update workflow logic to add a new check when a Site Inspection job is completed.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Send Plentify notification only if no related "Physical Site Inspection" child job exists.</p>
+
+      <h3>🔧 What to Update:</h3>
+      <ul>
+        <li>🔍 Modify pre-condition logic in workflow.</li>
+        <li>📦 If Site Inspection has a Physical Site Inspection child → ❌ Stop workflow.</li>
+        <li>✅ Else → Proceed with notification.</li>
+      </ul>
+
+      <h3>🔗 Reference:</h3>
+      <p><a href="https://internalwf.zuper.co/workflow/xfSqxh30lFoIW342" target="_blank">Workflow Link</a></p>
+
+      <h3>✅ Outcome:</h3>
+      <p>More accurate Plentify notifications, avoiding duplicates when child inspections exist.</p>
+    </div>
+  </div>
+
+  <!-- Modal 12 -->
+  <div class="modal" id="taskModal12">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal12')">&times;</span>
+
+      <h1>🔁 Job Status Update Automations</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Automate syncing of job statuses between parent and child jobs, and trigger public slot links for tenants.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Ensure status alignment across job hierarchy and improve communication with tenants.</p>
+
+      <h3>🔧 What to Automate:</h3>
+      <ul>
+        <li>☑️ If Parent = <strong>Quote Accepted</strong> → Set Child = <strong>Quote Accepted</strong></li>
+        <li>☑️ If Parent = <strong>Quote Rejected</strong> → Set Child = <strong>Quote Rejected</strong></li>
+        <li>📬 If Child = <strong>Return Visit</strong> → Trigger slot public link to <strong>Tenant</strong></li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Seamless status sync and tenant notifications for better scheduling.</p>
+    </div>
+  </div>
+
+
+  <!-- Modal 13 -->
+  <div class="modal" id="taskModal13">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal13')">&times;</span>
+
+      <h1>⭐ Feedback Survey Post Work Completion</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Send a feedback email to customers when a child job is marked as "Work Completed".
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Collect customer feedback and encourage 5-star reviews.</p>
+
+      <h3>🔧 What to Automate:</h3>
+      <ul>
+        <li>📬 Trigger email when <strong>Child Job Status = Work Completed</strong></li>
+        <li>🖱️ Email includes a link to a public page</li>
+        <li>🌟 Page shows a message and a link to <strong>Shamrock Google Review</strong></li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Increased feedback engagement and better online reputation for Shamrock.</p>
+    </div>
+  </div>
+
+  <!-- Modal 14 -->
+  <div class="modal" id="taskModal14">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal14')">&times;</span>
+
+      <h1>📩 Reverse Update Notification - Wetility</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Trigger email notification when custom field changes are detected during a reverse update.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Ensure internal team is informed of contract-affecting changes.</p>
+
+      <h3>🔧 What to Automate:</h3>
+      <ul>
+        <li>🔁 Detect reverse update with custom field changes</li>
+        <li>📤 Send email from <strong>notifications@wetility.energy</strong></li>
+        <li>📥 To: <strong>zupersiteinspections@wetility.energy</strong></li>
+        <li>📋 CC: <strong>zuperadmin@wetility.energy</strong>, <strong>zuperinstallations@wetility.energy</strong></li>
+      </ul>
+
+      <h3>✉️ Email Content:</h3>
+      <div class="sub-bullet">
+        <strong>Subject:</strong> Wetility Internal - Contract Addendum Updates Required<br>
+        <strong>Body:</strong><br>
+        Dear Team,<br><br>
+        There have been changes to the solar panels or battery requirements for the customer -
+        <code>{{customer_first_name}} {{customer_last_name}}</code>. Please verify and update the contract addendum with
+        this and get this approved from the customer prior to the installation.<br><br>
+        Yours in Energy,<br>
+        Wetility
+      </div>
+
+      <h3>✅ Outcome:</h3>
+      <p>All stakeholders are promptly informed of critical updates needing contract changes.</p>
+    </div>
+  </div>
+
+  <!-- Modal 16 -->
+  <div class="modal" id="taskModal16">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal16')">&times;</span>
+
+      <h1>💰 Consolidated Invoice - Drain and Clean 1 Job Category</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Automate the creation of a consolidated invoice for customers in the 'Drain & Clean 1' job category after the
+        completion of the child job.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Generate a consolidated invoice combining the first and second "Drain & Clean 1" jobs for a customer.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>👨‍👩‍👦 Use a Parent-Child job approach for invoice generation.</li>
+        <li>📅 Trigger creation of consolidated invoice after the completion of the second "Drain & Clean 1" job.</li>
+        <li>📜 Populate and calculate line items for both jobs in the consolidated invoice.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Generate a comprehensive invoice for customers with combined job details for efficient billing.</p>
+    </div>
+  </div>
+
+  <!-- Modal 17 -->
+  <div class="modal" id="taskModal17">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal17')">&times;</span>
+
+      <h1>🐞 [BUG] Auto-Renew Service Contract</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        The Auto-Renew Service Contract workflow is not functioning as expected. We’ve made local changes to the
+        workflow to fix the issue, which need to be applied to the system.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Fix the auto-renew contract workflow to function as intended by making necessary updates to the HTTP POST
+        request and workflow logic.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>🔄 Convert the JSON body in the HTTP POST node from an object to an array.</li>
+        <li>✍️ Change the property object name to "property".</li>
+        <li>📤 Instead of passing the entire property object, pass only the property UID.</li>
+        <li>📅 Update the logic for the renewed <strong>start date</strong> and <strong>end date</strong>.</li>
+        <li>🔒 Hardcode the contract type as <strong>"RENEWED"</strong>.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Ensure that the workflow functions correctly, renewing service contracts as expected.</p>
+
+      <h3>🔗 Related Task:</h3>
+      <a href="https://projects.zoho.com/portal/zuperinc#zp/projects/1832517000010972051/tasks/custom-view/1832517000005003003/list/task-detail/1832517000011804513?group_by=tasklist"
+        target="_blank">View Related Task</a>
+    </div>
+  </div>
+  <!-- Modal 18 -->
+  <div class="modal" id="taskModal18">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal18')">&times;</span>
+
+      <h1>🔑 VIN Decoding Integration</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Automate VIN decoding within the Asset module to update vehicle information like Model, Year, and Make based on
+        the VIN number.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Enable automated VIN decoding for Asset records in Zuper by integrating VIN decoding functionality and updating
+        relevant fields.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>🔌 Integrate VIN decoding through the provided <a href="https://vpic.nhtsa.dot.gov/decoder/"
+            target="_blank">VIN Decoder Link</a>.</li>
+        <li>📥 Client will upload VIN details manually in the Asset Serial Number field.</li>
+        <li>🔄 Automatically decode the VIN and update the custom fields: Model, Year, and Make.</li>
+        <li>📈 Ensure data accuracy and update Asset records accordingly.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Seamless update of Asset records with decoded VIN data for improved asset tracking and management.</p>
+    </div>
+  </div>
+  <!-- Modal 19 -->
+  <div class="modal" id="taskModal19">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal19')">&times;</span>
+
+      <h1>🐞 Bug - Site Inspection Report Email Attachment Corrupted or Blank</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        Attachments (PDFs in a zip file) sent via email are either corrupted or blank and not opening. The issue needs
+        to be resolved to ensure the integrity of the email attachments.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Fix the issue where PDF attachments in the email are corrupted or blank, ensuring that the files are properly
+        generated and accessible.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>📥 Review and fix the process of zipping PDF attachments before sending in the notification email.</li>
+        <li>🔧 Ensure that the zip file is correctly packaged and not corrupted before attaching it to the email.</li>
+        <li>🔄 Test the email workflow to confirm the attachment opens correctly and is not empty or corrupted.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Working PDF attachments in email notifications related to site inspection and physical site inspection job
+        completions.</p>
+
+      <h3>🔗 Related Workflow:</h3>
+      <a href="https://internalwf.zuper.co/workflow/V17YqxX0Sj87YKzt" target="_blank">View Related Workflow</a>
+    </div>
+  </div>
+  <!-- Modal 20 -->
+  <div class="modal" id="taskModal20">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal20')">&times;</span>
+
+      <h1>🔧 Property Field Automations</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        We need to automate the calculation of average scores for fields within different sections of Property fields
+        (custom). These calculations should be based on the data specified in the Control Panel tab of the provided
+        sheet.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Automate the calculation of the average score for each section of the Property fields based on the control
+        panel's specifications.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>📊 Refer to the provided sheet: <a
+            href="https://zupersoftinc-my.sharepoint.com/:x:/r/personal/madhu_jayakumar_zuper_co/_layouts/15/Doc.aspx?sourcedoc=%7B2E88183B-E084-4A2F-92E3-04403ACBD2AE%7D&file=Zuper_Property%20Custom%20Fields_updated%202.26.25.xlsx&action=default&mobileredirect=true"
+            target="_blank">Zuper Property Custom Fields Sheet</a>.</li>
+        <li>🗂️ Identify the sections within Property fields based on the tabs in the sheet.</li>
+        <li>🔢 Implement automation to calculate the average score for each section based on the calculation in the
+          Control Panel tab.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Accurate automated calculations for the average score of each section in Property fields based on the provided
+        logic.</p>
+
+      <h3>📄 Example Fields:</h3>
+      <p>Refer to the Control Panel tab for examples of fields that need to be measured and calculated.</p>
+    </div>
+  </div>
+  <!-- Modal 21 -->
+  <div class="modal" id="taskModal21">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal21')">&times;</span>
+
+      <h1>🔧 Custom Work: Update the Job Notes with Associated Property Notes</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        On creation of a job, the notes from the associated Property need to be populated in the Job notes.
+        Additionally, these Property notes should be updated at the beginning of the job description.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Ensure that the Job description is populated with the notes from the associated Property when a new job is
+        created.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>🔄 On job creation, retrieve the notes from the associated Property.</li>
+        <li>✏️ Populate the job description with these Property notes at the beginning of the description.</li>
+      </ul>
+
+      <h3>✅ Outcome:</h3>
+      <p>Job description will be automatically populated with the notes from the associated Property, ensuring
+        consistency and easy reference.</p>
+    </div>
+  </div>
+  <!-- Modal 22 -->
+  <div class="modal" id="taskModal22">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal22')">&times;</span>
+
+      <h1>🔧 Custom UI and Automation: Parts Custom Field Edit</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        When a line item is added to a contract, the user can edit only the first-class fields. However, the requirement
+        is to allow users to view and edit specific custom fields within the Parts and Services.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Allow users to view and edit specific custom fields (e.g., # of visits, Hours Per Visit, and Hours Per Year)
+        for each line item in the contract.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>📋 Display the custom fields for the line item: # of visits, Hours Per Visit, and Hours Per Year.</li>
+        <li>🔄 Allow the user to edit these fields directly within the contract view.</li>
+        <li>🧮 Auto-populate the Hours Per Year field based on the calculation of # of visits and Hours Per Visit.</li>
+        <li>💾 Ensure the edited value only updates the metadata for the current contract instance, not the actual
+          custom field of the part.</li>
+      </ul>
+
+      <h3>✅ Expected Outcome:</h3>
+      <p>Upon adding a line item to the contract, users will be able to view and edit the specified custom fields for
+        that line item directly in the contract, ensuring smooth management of the contract data.</p>
+    </div>
+  </div>
+  <!-- Modal 23 -->
+  <div class="modal" id="taskModal23">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal23')">&times;</span>
+
+      <h1>📊 Custom Report - V3</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        The customer requires V3 of the custom reports to display inventory data, similar to what was implemented in V2
+        with the custom UI. The task is to ensure the reports show all relevant inventory data as requested.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Replicate the functionality from V2 to V3, ensuring all inventory data is displayed in the custom reports.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>📅 Ensure that when all items are clicked, the date is automatically fetched for the first created part
+          date.</li>
+        <li>📈 Display all relevant inventory data in the reports:
+          <ul>
+            <li>Custom Part Usage Report</li>
+            <li>Part Room Inventory Report</li>
+            <li>Inventory by Location Report</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>✅ Expected Outcome:</h3>
+      <p>V3 of the custom reports will show all inventory data with the necessary details, matching the functionality
+        from V2.</p>
+    </div>
+  </div>
+  <!-- Modal 24 -->
+  <div class="modal" id="taskModal24">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal24')">&times;</span>
+
+      <h1>📊 Custom Report - Quote (Sent Quotes)</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        The requirement is to create a custom report for quotes in 'Sent' status for selected months. The report should
+        be categorized by the assigned technician (custom field in the quote), which will be updated when the quote is
+        created.
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Create a report that pulls quotes in 'Sent' status for the selected months, and classify them by the assigned
+        technician.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>📅 Pull all quotes with 'Sent' status for the selected months.</li>
+        <li>📂 Classify the quotes based on the assigned technician (custom field in the quote).</li>
+        <li>📊 Ensure the report reflects the correct data, based on the field mapping provided in the attached Excel
+          sheet.</li>
+      </ul>
+
+      <h3>✅ Expected Outcome:</h3>
+      <p>The custom report will display quotes in 'Sent' status for the selected months, categorized by the assigned
+        technician.</p>
+    </div>
+  </div>
+  <!-- Modal 25 -->
+  <div class="modal" id="taskModal25">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal25')">&times;</span>
+
+      <h1>📊 Custom Report - Quote Approved and Associated Work Order by Business Unit</h1>
+
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        The requirement is to create a week-wise report for Work Orders and Quotes, classified by Business Unit. The
+        field mapping for this report is provided in the attached sheet (highlighted in red).
+      </div>
+
+      <h3>🎯 Goal:</h3>
+      <p>Create a report that displays Work Orders and Quotes approved, classified by the Business Unit and broken down
+        by week.</p>
+
+      <h3>🔧 What to Do:</h3>
+      <ul>
+        <li>📅 Generate a week-wise report that includes both Work Orders and Quotes.</li>
+        <li>🏢 Classify the data based on the Business Unit.</li>
+        <li>📑 Refer to the attached field mapping sheet (highlighted in red) to map the necessary fields correctly.
+        </li>
+      </ul>
+
+      <h3>✅ Expected Outcome:</h3>
+      <p>The report will be sorted by week, displaying the associated Work Orders and Quotes for each Business Unit.</p>
+    </div>
+  </div>
+  <!-- Modal 26 -->
+<div class="modal" id="taskModal26">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal7')">&times;</span>
+    <span class="close" onclick="closeModal('taskModal26')">&times;</span>
 
-    <h1>📅 Custom Scheduling Page with Widget</h1>
+    <h1>🔗 Officient<>Zuper Integration</h1>
 
-    <h3>📜 Description:</h3>
-    <p>Create a custom scheduling page with an embedded widget to let customers schedule jobs using a unique link.</p>
-
-    <h3>🔧 Requirements:</h3>
-    <table border="1" cellpadding="10">
-      <tr>
-        <th>Trigger</th>
-        <td>Generate unique scheduling link when a new job is created.</td>
-      </tr>
-      <tr>
-        <th>Design</th>
-        <td>Match attached design; include scheduling widget.</td>
-      </tr>
-      <tr>
-        <th>Slot Selection</th>
-        <td>Allow slot selection based on user availability.</td>
-      </tr>
-      <tr>
-        <th>Duration</th>
-        <td>Set by custom "Slot duration" field (e.g., 30 min, 60 min).</td>
-      </tr>
-      <tr>
-        <th>Confirmation</th>
-        <td>Lock slot after selection; disable link after confirmation.</td>
-      </tr>
-      <tr>
-        <th>Notifications</th>
-        <td>Send confirmation emails for booking and link sent.</td>
-      </tr>
-    </table>
-
-    <h3>📊 Slot Selection Flow:</h3>
-    <div style="text-align:center;">
-      <img src="https://via.placeholder.com/600x350?text=Slot+Selection+Flowchart" alt="Slot Selection Flowchart" />
+    <div class="section step">
+      <strong>📝 Description:</strong><br>
+      The integration between Officient.io and Zuper is designed to streamline leave and attendance data management. The goal is to automatically sync leave data from Officient to Zuper, reducing manual data entry and improving efficiency.
     </div>
 
-    <h3>🎯 Slot Logic:</h3>
-    <table border="1" cellpadding="10">
-      <tr>
-        <th>Due Date</th>
-        <td>Last available selection date.</td>
-      </tr>
-      <tr>
-        <th>Start Date</th>
-        <td>First available date or when status is "Scheduling by Customer".</td>
-      </tr>
-      <tr>
-        <th>Assigned User Availability</th>
-        <td>Slots shown based on user calendar.</td>
-      </tr>
-    </table>
+    <h3>🎯 Use Case / Workflow:</h3>
+    <ul>
+      <li>📅 Sync approved leave requests (sick leave, holiday, vacation) from Officient to Zuper in real-time.</li>
+      <li>🔄 Automatically update changes in leave requests (cancellations, extensions) in Zuper.</li>
+      <li>📊 Centralize workforce availability and attendance data from Officient to generate consolidated reports in Zuper.</li>
+    </ul>
 
-    <h3>🎯 Goal:</h3>
-    <p>Enable customers to schedule jobs based on available slots, ensuring smooth job management.</p>
+    <h3>🔧 Expected Outcome:</h3>
+    <ul>
+      <li>Automate the synchronization of leave data from Officient to Zuper.</li>
+      <li>Provide real-time updates for employee availability in Zuper.</li>
+      <li>Centralize attendance and workforce availability reports in Zuper for easy management.</li>
+    </ul>
+
+    <h3>🔗 Technical Details:</h3>
+    <p><strong>API Documentation:</strong> <a href="https://apidocs.officient.io/" target="_blank">Officient API</a></p>
+    <p><strong>Login Credentials:</strong> Not yet provided.</p>
+    <p><strong>Feasibility Study:</strong> Completed and deemed feasible.</p>
+
+    <h3>🔗 Related Task:</h3>
+    <p><a href="https://projects.zoho.com/portal/zuperinc#zp/projects/1832517000009345437/tasks/custom-view/1832517000005003001/list/task-detail/1832517000010785433?group_by=none" target="_blank">View Task</a></p>
+  </div>
+</div>
+<!-- Modal 27 -->
+<div class="modal" id="taskModal27">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal27')">&times;</span>
+
+    <h1>📝 Change Request - Additional Changes on the Document</h1>
+
+    <div class="section step">
+      <strong>📋 Description:</strong><br>
+      The customer has requested the following changes to the document:
+    </div>
+
+    <h3>🎯 Customer Requirements:</h3>
+    <ul>
+      <li>❌ Remove the text "Welcome to Wetility".</li>
+      <li>🔠 Increase the font size for "Please confirm your details and report your issue."</li>
+      <li>📝 Change the comment box label for "other issues" under the Technical category to "Describe other technical issue you are facing" instead of "Enter reason".</li>
+      <li>🔄 Rename the "Serial Number" field to "Inverter Serial Number".</li>
+      <li>📸 Add the note below the image attachment: "Please give camera and gallery access to your web browser for adding images."</li>
+      <li>🔤 In the job title, ensure there is a space between the customer's first and last name when a job is created.</li>
+      <li>📧 Modify the error message for unregistered emails to "Unrecognized Email. Kindly log your ticket with the email address associated with your account".</li>
+      <li>📞 Validate the customer details for email, contact number, and address, with appropriate error messages if mismatches occur:</li>
+      <ul>
+        <li>Contact Number: "Unrecognized contact number. Kindly log your ticket with the contact number associated with your account".</li>
+        <li>Address: "Unrecognized address. Kindly log your ticket with the address associated with your account".</li>
+      </ul>
+      <li>🛠️ Populate the issues, sub-issues, and comments under the custom field section for "Unplanned Maintenance" jobs.</li>
+    </ul>
+
+    <h3>🔧 Module Impacted:</h3>
+    <p>Static Page</p>
+
+    <h3>🔗 Reusable Catalog Reference:</h3>
+    <p>NA</p>
+
+    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+    <p>Changes to existing Automation</p>
+
+    <h3>📎 Parent Task:</h3>
+    <p>Existing task references the same module and changes.</p>
+  </div>
+</div>
+<!-- Modal 28 -->
+<div class="modal" id="taskModal28">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal28')">&times;</span>
+
+    <h1>📊 Custom Report - Quotes Quarterly and Monthly</h1>
+
+    <div class="section step">
+      <strong>📋 Description:</strong><br>
+      Meadowbrook requires a custom report based on the Quote module.
+    </div>
+
+    <h3>🎯 Requirement Details:</h3>
+    <ul>
+      <li>📑 The attached report contains the field mapping (highlighted in Red Text).</li>
+      <li>📊 There are multiple worksheets in the attached Excel file:</li>
+      <ul>
+        <li>1️⃣ Quarterly Summary Report</li>
+        <li>2️⃣ Monthly Summary Report (Contains all the months of the selected Quarter)</li>
+        <li>3️⃣ Quarterly Detailed Report</li>
+        <li>4️⃣ Monthly Detailed Report (Contains all the months of the selected Quarter)</li>
+      </ul>
+    </ul>
+
+    <h3>🔧 Module Impacted:</h3>
+    <p>Quote Module</p>
+
+    <h3>📎 Reusable Catalog Reference:</h3>
+    <p>NA</p>
+
+    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+    <p>New Custom Report</p>
+
+    <h3>📎 Attached Report:</h3>
+    <p>Field mapping details and report structure provided in the attached Excel sheet.</p>
+  </div>
+</div>
+<!-- Modal 29 -->
+<div class="modal" id="taskModal29">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal29')">&times;</span>
+
+    <h1>📅 Changes Needed in the Scheduling Widget</h1>
+
+    <div class="section step">
+      <strong>📋 Description:</strong><br>
+      Wesgroup requires changes to the scheduling widget to improve the scheduling experience.
+    </div>
+
+    <h3>🎯 Requirements:</h3>
+    <ul>
+      <li>1️⃣ The date format should be "18-April-2025" (DD-Month-YYYY).</li>
+      <li>2️⃣ After scheduling through the link, update the status to "Scheduled".</li>
+    </ul>
+
+    <h3>🔧 Fixes to be Added:</h3>
+    <ul>
+      <li>1️⃣ The email notification sent after job scheduling currently contains the line "sent from n8n." This needs to be removed.</li>
+    </ul>
+
+    <h3>⚙️ Module Impacted:</h3>
+    <p>Scheduling Widget & Email Notifications</p>
+
+    <h3>📎 Reusable Catalog Reference:</h3>
+    <p>NA</p>
+
+    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+    <p>Changes to Existing Scheduling Workflow</p>
+  </div>
+</div>
+<!-- Modal 30 -->
+<div class="modal" id="taskModal30">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskModal30')">&times;</span>
+
+    <h1>📝 Update the Customer Notes</h1>
+
+    <div class="section step">
+      <strong>📋 Description:</strong><br>
+      Mid American Gunite Pools requires an update to the customer notes in Zuper based on extracted notes from Pool Brain.
+    </div>
+
+    <h3>🎯 Requirement:</h3>
+    <ul>
+      <li>1️⃣ Extract customer notes from the parent task.</li>
+      <li>2️⃣ Update the customers in Zuper with the notes that have been extracted from Pool Brain.</li>
+    </ul>
+
+    <h3>🔗 Related Task:</h3>
+    <p><a href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011915333">Related Task on Zoho</a></p>
+
+    <h3>⚙️ Module Impacted:</h3>
+    <p>Customer Notes & Task Management</p>
+
+    <h3>📎 Reusable Catalog Reference:</h3>
+    <p>NA</p>
+
+    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+    <p>Changes to Existing Notes Sync Process</p>
   </div>
 </div>
 
-
-
-  
 
   <script>
     function showModal(id) {
       const modal = document.getElementById(id);
       modal.style.display = 'flex';
-  
+
       // Close modal if clicked outside the modal content
       modal.onclick = function (event) {
         if (event.target === modal) {
@@ -491,16 +1411,17 @@
         }
       };
     }
-  
+
     function closeModal(id) {
       const modal = document.getElementById(id);
       modal.style.display = 'none';
-  
+
       // Remove the onclick to prevent multiple event bindings
       modal.onclick = null;
     }
   </script>
-  
+
 
 </body>
+
 </html>
