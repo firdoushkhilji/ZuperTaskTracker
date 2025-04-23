@@ -7,134 +7,180 @@
   <title>Task Tracker</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      padding: 30px;
-    }
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  padding: 30px;
+  margin: 0;
+}
 
-    .task-list {
+h1 {
+  color: #1a75cf;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task {
+  position: relative;
+  background: #fff;
+  padding: 20px 120px 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 92%;
+}
+
+.task h3 {
+  margin: 0;
+  color: #1a75cf;
+}
+
+.task-id {
+  color: rgb(14, 0, 76);
+  font-weight: bold;
+}
+
+.view-zoho-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #003366;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+
+.view-zoho-btn:hover {
+  background-color: #cb0133;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  max-width: 800px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.step {
+  margin: 12px 0;
+}
+
+.sub-bullet {
+  margin-left: 25px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.blue {
+  color: #00376f;
+}
+
+.tick {
+  color: green;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+}
+
+.value {
+  margin-left: 8px;
+  color: #444;
+}
+
+.status-done {
+  color: #4CAF50;
+}
+
+.status-on-hold {
+  color: #FF9800;
+}
+
+.status-closed {
+  color: #2196F3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th,
+td {
+  border: 2px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  color: red;
+}
+/* Filter buttons styles */
+.filter-container {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .task {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .task h3 {
-      margin: 0;
-      color: #1a75cf;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
       justify-content: center;
-      align-items: center;
-      z-index: 1000;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-
-    .modal-content {
-      background: white;
-      padding: 30px;
-      max-width: 800px;
-      width: 90%;
-      border-radius: 10px;
-      position: relative;
-      overflow-y: auto;
-      max-height: 90vh;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      font-weight: bold;
+    
+    .filter-btn {
+      padding: 8px 15px;
+      border: none;
+      background-color: #e0e0e0;
+      border-radius: 5px;
       cursor: pointer;
-    }
-
-    h1 {
-      color: #1a75cf;
-    }
-
-    table {
-      border-collapse: collapse;
-      margin: 15px 0;
-      width: 100%;
-    }
-
-    th,
-    td {
-      border: 2px solid #000;
-      padding: 8px;
-      text-align: center;
-    }
-
-    th {
-      color: red;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .step {
-      margin: 12px 0;
-    }
-
-    strong {
-      font-weight: 600;
-    }
-
-    .sub-bullet {
-      margin-left: 25px;
-    }
-
-    .blue {
-      color: #00376f;
-    }
-
-    .tick {
-      color: green;
-    }
-
-    .label {
       font-weight: bold;
-      color: #333;
+      transition: all 0.3s;
     }
-
-    .value {
-      margin-left: 8px;
-      color: #444;
+    
+    .filter-btn:hover {
+      background-color: #d0d0d0;
     }
-
-    .status-done {
-      color: #4CAF50;
-    }
-
-    .status-on-hold {
-      color: #FF9800;
-    }
-
-    .status-closed {
-      color: #2196F3;
-    }
-
-    .task-id {
-      color: rgb(14, 0, 76);
-      font-weight: bold;
+    
+    .filter-btn.active {
+      background-color: #4a6cf7;
+      color: white;
     }
   </style>
 </head>
@@ -144,187 +190,879 @@
 
 
   <h2 style="text-align: center; font-size: 40px;">Zuper Tasks</h2>
+  
+  <!-- Filter buttons -->
+  <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="done">Done</button>
+    <button class="filter-btn" data-filter="testing">Testing</button>
+    <button class="filter-btn" data-filter="on-hold">On Hold</button>
+    <button class="filter-btn" data-filter="in-progress">In Progress</button>
+    <button class="filter-btn" data-filter="backlog">Backlog</button>
+  </div>
+  
   <div class="task-list">
-    <div class="task" onclick="showModal('taskModal1')">
-      <h3>Task No.: 1<br><span class="task-id">ZU-1122</span> Custom Report: Job chronological order</h3>
+    <div class="task" onclick="showModal('taskModal1')" data-status="on-hold">
+      <h3>Task No.: 1<br></span> Custom Report: Job chronological order</h3>
       <h4>Proper PH Pools (Proper pH)</h4>
-      <p>Status: ⏸ On Hold</p>
+      <p>Status: ⏸ On Hold</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011265925" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[44]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[0, 19, 168, 188, 207, 212]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>2</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="task" onclick="showModal('taskModal2')" data-status="in-progress">
+      <h3>Task No.: 2<br></span> Booking Widget - Define Slot Range in Job Details</h3>
+      <h4>Proper PH Pools (Proper pH)</h4>
+      <p>Status: ⏳ In Progress</p>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011831023" target="_blank">View on Zoho</a>
+    </div>
+    
+    <div class="task" onclick="showModal('taskModal3')" data-status="done">
+      <h3>Task No.: 3<br></span> Auto - renew Service Contract</h3>
+      <h4>Mid American Gunite Pools</h4>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011804513" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[41]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>0</div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="task" onclick="showModal('taskModal4')" data-status="done">
+      <h3>Task No.: 4<br></span> Automatic assigning of jobs to route.</h3>
+      <h4>Proper PH Pools (Proper pH)</h4>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011854035" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 26, 42, 169]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[91.5, 165, 240, 240]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>0</div>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="task" onclick="showModal('taskModal5')" data-status="done">
+      <h3>Task No.: 5<br></span> Contract Automation updates</h3>
+      <h4>Proper PH Pools (Proper pH)</h4>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011804527" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 47, 72.5, 145.5, 188, 187, 193]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[21, 64, 141, 188.5, 188.5]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>1</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>5</div>
+        </div>
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal2')">
-      <h3>Task No.: 2<br><span class="task-id">ZU-1162</span> Booking Widget - Can we define the slot range in Job details</h3>
-      <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
-      <p>Status: ✅ Done</p>
+    <div class="task" onclick="showModal('taskModal6')" data-status="done">
+      <h3>Task No.: 6<br></span> Custom Integration - One80 - Refunds</h3>
+      <h4>Brothers Gutters Franchise</h4>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000009967720" target="_blank">View on Zoho</a>
     </div>
-
-    <div class="task" onclick="showModal('taskModal3')">
-      <h3>Task No.: 3<br><span class="task-id">ZU-1169</span> Auto - renew Service Contract</h3>
-      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
-
-    <div class="task" onclick="showModal('taskModal4')">
-      <h3>Task No.: 4<br><span class="task-id">ZU-1169</span> Automatic assigning of jobs to route</h3>
-      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
-
-    <div class="task" onclick="showModal('taskModal5')">
-      <h3>Task No.: 5<br><span class="task-id">ZU-1169</span> Contract Automation updates</h3>
-      <h4>Mid American Gunite Pools (Mid American Pools)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
-
-    <div class="task" onclick="showModal('taskModal6')">
-      <h3>Task No.: 6<br><span class="task-id">N/A</span> Custom Integration - One80 - Refunds</h3>
-      <h4>Proper PH Pools (Brother gutters)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
-
-    <div class="task" onclick="showModal('taskModal7')">
-      <h3>Task No.: 7<br><span class="task-id">ZU-1095</span> Custom Scheduling page with widget</h3>
+    
+    <div class="task" onclick="showModal('taskModal7')" data-status="done">
+      <h3>Task No.: 7<br></span> Custom Scheduling page with widget</h3>
       <h4>Wesgroup (Wesgroup)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012029077" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 49, 97, 170, 198, 206, 208, 211]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[5, 99, 164, 196, 295, 320, 344]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>9</div>
+        </div>
+      </div>
     </div>
 
-    <div class="task" onclick="showModal('taskModal8')">
-      <h3>Task No.: 8<br><span class="task-id">ZU-968</span> Change Request for the above Report</h3>
+    <div class="task" onclick="showModal('taskModal8')" data-status="done">
+      <h3>Task No.: 8<br></span> Change Request for the above Report</h3>
       <h4>Love's Travel Stops & Country Stores (Loves-travel-stops)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012044019" target="_blank">View on Zoho</a>
     </div>
 
-    <div class="task" onclick="showModal('taskModal9')">
-      <h3>Task No.: 9<br><span class="task-id">ZU-1162</span> Update in Assignment Process</h3>
+    <div class="task" onclick="showModal('taskModal9')" data-status="done">
+      <h3>Task No.: 9<br></span> Update in Assignment Process</h3>
       <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012186884" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 260]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[22, 22, 357]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>0</div>
+        </div>
+      </div>
     </div>
 
-    <div class="task" onclick="showModal('taskModal10')">
-      <h3>Task No.: 10<br><span class="task-id">ZU-717</span> Bug - Reverse update not working</h3>
+    <div class="task" onclick="showModal('taskModal10')" data-status="done">
+      <h3>Task No.: 10<br></span> Bug - Reverse update not working</h3>
       <h4>Wetility Pty Ltd (Wetility)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="" target="_blank">View on Zoho</a>
+      <a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012193853" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 71, 72, 77, 81]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[79, 88]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>2</div>
+        </div>
+      </div></div>
 
-    <div class="task" onclick="showModal('taskModal11')">
-      <h3>Task No.: 11<br><span class="task-id">ZU-717</span> Change Request - Plentify notification after Site Inspection completed</h3>
+    <div class="task" onclick="showModal('taskModal11')" data-status="done">
+      <h3>Task No.: 11<br></span> Change Request - Plentify notification after Site
+        Inspection completed</h3>
       <h4>Wetility Pty Ltd (Wetility)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012193933" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[72]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>0</div>
+        </div>
+      </div>
     </div>
 
-    <div class="task" onclick="showModal('taskModal12')">
-      <h3>Task No.: 12<br><span class="task-id">ZU-1162</span> Job status update Automations</h3>
+    <div class="task" onclick="showModal('taskModal12')" data-status="done">
+      <h3>Task No.: 12<br></span> Job status update Automations</h3>
       <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012186908" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 260, 303, 473]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[22, 269, 357, 380]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>1</div>
+        </div>
+      </div>
     </div>
 
-    <div class="task" onclick="showModal('taskModal13')">
-      <h3>Task No.: 13<br><span class="task-id">ZU-1162</span> Feedback survey post work completion</h3>
+    <div class="task" onclick="showModal('taskModal13')" data-status="testing">
+      <h3>Task No.: 13<br></span> Feedback survey post work completion</h3>
       <h4>Shamrock Property Maintenance (Shamrock Property)</h4>
-      <p>Status: 🧪 Testing</p>
+      <p>Status: 🧪 Testing</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012186922" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 71, 199, 199, 295, 300, 323, 395]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[295, 305, 306, 310, 383, 400]</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>2</div>
+        </div>
+      </div>
     </div>
 
-    <div class="task" onclick="showModal('taskModal14')">
-      <h3>Task No.: 14<br><span class="task-id">ZU-717</span> Custom Work - Notification when reverse update happens</h3>
+    <div class="task" onclick="showModal('taskModal14')" data-status="done">
+      <h3>Task No.: 14<br></span> Custom Work - Notification when reverse update happens
+      </h3>
       <h4>Wetility Pty Ltd (Wetility)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012193867" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[ 0, 66, 73]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[66, 66, 91]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>1</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>1</div>
+        </div>
+      
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal15')">
-      <h3>Task No.: 15<br><span class="task-id">ZU-717</span> Custom Work - Fetching value of CSM Owner</h3>
+    <div class="task" onclick="showModal('taskModal15')" data-status="done">
+      <h3>Task No.: 15<br></span> Custom Work - Fetching value of CSM Owner</h3>
       <h4>Wetility Pty Ltd (Wetility)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012193833" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[48, 73]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>1</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>1</div>
+        </div>
+      
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal16')">
-      <h3>Task No.: 16<br><span class="task-id">ZU-1169</span> Consolidated invoice (Drain and Clean 1 - Job category)</h3>
+    <div class="task" onclick="showModal('taskModal16')" data-status="done">
+      <h3>Task No.: 16<br></span> Consolidated invoice (Drain and Clean 1 - Job category)
+      </h3>
       <h4>Mid American Gunite Pools (Mid American Pools)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011854055" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 13.5]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[9, 9, 29]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>1</div>
+        </div>
+      
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal17')">
-      <h3>Task No.: 17<br><span class="task-id">ZU-1169</span> [BUG] Auto- renew Service Contract</h3>
+    <div class="task" onclick="showModal('taskModal17')" data-status="done">
+      <h3>Task No.: 17<br></span> [BUG] Auto- renew Service Contract</h3>
       <h4>Mid American Gunite Pools (Mid American Pools)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012308368" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 5, 7, 24]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[7, 10, 31, 75]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>1</div>
+        </div>
+      
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal18')">
-      <h3>Task No.: 18<br><span class="task-id">ZU-914</span> Vin Decoding</h3>
+    <div class="task" onclick="showModal('taskModal18')" data-status="backlog">
+      <h3>Task No.: 18<br></span> Vin Decoding</h3>
       <h4>Esl Solution (ESL Solution)</h4>
-      <p>Status: 📋 Backlog</p>
+      <p>Status: 📋 Backlog</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012228065" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0, 49, 75, 168]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[0, 1.5, 46, 50, 52, 75, 122, 168, 169, 173]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>2</div>
+        </div>
+      
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal19')">
-      <h3>Task No.: 19<br><span class="task-id">ZU-717</span> Bug - Site Inspection report email attachment corrupted or blank</h3>
+    <div class="task" onclick="showModal('taskModal19')" data-status="done">
+      <h3>Task No.: 19<br></span> Bug - Site Inspection report email attachment corrupted or
+        blank</h3>
       <h4>Wetility Pty Ltd (Wetility)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012208191" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
+
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[2]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>0</div>
+        </div>
+      
+      </div>
+      
     </div>
 
-    <div class="task" onclick="showModal('taskModal20')">
-      <h3>Task No.: 20<br><span class="task-id">ZU-1063</span> Property field Automations</h3>
+    <div class="task" onclick="showModal('taskModal20')" data-status="backlog">
+      <h3>Task No.: 20<br></span> Property field Automations</h3>
       <h4>Sylmar Group (EAI)</h4>
-      <p>Status: 📋 Backlog</p>
-    </div>
+      <p>Status: 📋 Backlog</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012130849" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal21')">
-      <h3>Task No.: 21<br><span class="task-id">ZU-1169</span> Custom work: Update the job notes with Associated property Notes</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[0, 24, 36, 40, 57]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[8, 32, 48, 80]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>1</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>2</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal21')" data-status="done">
+      <h3>Task No.: 21<br></span> Custom work: Update the job notes with Associated
+        property Notes</h3>
       <h4>Mid American Gunite Pools (Meadowbrook)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012091293" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal22')">
-      <h3>Task No.: 22<br><span class="task-id">ZU-854</span> Custom UI and Automation: Parts custom field edit</h3>
+        <div style="text-align: left;">
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+          <div>[0]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+          <div>[15]</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+          <div>0</div>
+        </div>
+      
+        <div style="text-align: left;">
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+          <div>0</div>
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal22')" data-status="on-hold">
+      <h3>Task No.: 22<br></span> Custom UI and Automation: Parts custom field edit</h3>
       <h4>Meadowbrook (Meadowbrook)</h4>
-      <p>Status: ⏸ On Hold</p>
-    </div>
+      <p>Status: ⏸ On Hold</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012212093" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal23')">
-      <h3>Task No.: 23<br><span class="task-id">ZU-709</span> Custom Report- V3</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[205]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[0]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>1</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal23')" data-status="backlog">
+      <h3>Task No.: 23<br></span> Custom Report- V3</h3>
       <h4>NC Equipment Solutions (NC Equipment Solutions)</h4>
-      <p>Status: 📋 Backlog</p>
-    </div>
+      <p>Status: 📋 Backlog</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012249261" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal24')">
-      <h3>Task No.: 24<br><span class="task-id">ZU-854</span> Custom report - Quote (Sent Quotes)</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[336]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[0, 0.02, 96, 168, 360]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>2</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal24')" data-status="on-hold">
+      <h3>Task No.: 24<br></span> Custom report - Quote (Sent Quotes)</h3>
       <h4>Meadowbrook (Meadowbrook)</h4>
-      <p>Status: ⏸ On Hold</p>
-    </div>
+      <p>Status: ⏸ On Hold</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012091349" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal25')">
-      <h3>Task No.: 25<br><span class="task-id">ZU-854</span> Custom Report - Quote approved and associated work order based on Business Unit</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[720]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[0]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal25')" data-status="on-hold">
+      <h3>Task No.: 25<br></span> Custom Report - Quote approved and associated work order
+        based on Business Unit</h3>
       <h4>Meadowbrook (Meadowbrook)</h4>
-      <p>Status: ⏸ On Hold</p>
-    </div>
+      <p>Status: ⏸ On Hold</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012120262" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal26')">
-      <h3>Task No.: 26<br><span class="task-id">ZU-1075</span> Officient<>Zuper Integration</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[0]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>No Response</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal26')" data-status="on-hold">
+      <h3>Task No.: 26<br></span> Officient<>Zuper Integration</h3>
       <h4>Becosoft (Becosoft)</h4>
-      <p>Status: ⏸ On Hold</p>
-    </div>
+      <p>Status: ⏸ On Hold</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012010337" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal27')">
-      <h3>Task No.: 27<br><span class="task-id">ZU-717</span> Change Request - Additional changes on the document</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[273, 552, 576]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[0, 0.5, 264, 384, 744, 749]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal27')" data-status="backlog">
+      <h3>Task No.: 27<br></span> Change Request - Additional changes on the document</h3>
       <h4>Wetility Pty Ltd (Wetility)</h4>
-      <p>Status: 📋 Backlog</p>
+      <p>Status: 📋 Backlog</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012482037" target="_blank">View on Zoho</a>
     </div>
 
-    <div class="task" onclick="showModal('taskModal28')">
-      <h3>Task No.: 28<br><span class="task-id">ZU-854</span> Custom Report - Quotes Quarterly and Monthly</h3>
+    <div class="task" onclick="showModal('taskModal28')" data-status="on-hold">
+      <h3>Task No.: 28<br></span> Custom Report - Quotes Quarterly and Monthly</h3>
       <h4>Meadowbrook (Meadowbrook)</h4>
-      <p>Status: ⏸ On Hold</p>
-    </div>
+      <p>Status: ⏸ On Hold</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012091333" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal29')">
-      <h3>Task No.: 29<br><span class="task-id">ZU-1095</span> Changes Needed in the scheduling widget</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[720, 948]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[0, 172, 1080, 1320]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>2</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal29')" data-status="done">
+      <h3>Task No.: 29<br></span> Changes Needed in the scheduling widget</h3>
       <h4>Wesgroup (Wesgroup)</h4>
-      <p>Status: ✅ Done</p>
-    </div>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012485158" target="_blank">View on Zoho</a>
+      <div style="display: flex; gap: 40px; font-family: Arial, sans-serif; font-size: 16px; color: #333; line-height: 1.4;">
 
-    <div class="task" onclick="showModal('taskModal30')">
-      <h3>Task No.: 30<br><span class="task-id">ZU-1169</span> Update the Customer notes</h3>
+        <div style="text-align: left;">
+      
+          <div style="color: #005baa; font-weight: bold;">Comments by Younus (hrs)</div>
+      
+          <div>[0, 0.5]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #d35400; font-weight: bold;">Comments by Clients (hrs)</div>
+      
+          <div>[0.83, 24.83, 30.83]</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #c0392b; font-weight: bold;">Bugs from Younus</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+        <div style="text-align: left;">
+      
+          <div style="color: #27ae60; font-weight: bold;">Changes from Clients</div>
+      
+          <div>0</div>
+      
+        </div>
+      
+      </div>
+      </div>
+
+    <div class="task" onclick="showModal('taskModal30')" data-status="done">
+      <h3>Task No.: 30<br></span> Update the Customer notes</h3>
       <h4>Mid American Gunite Pools (Mid American Pools)</h4>
-      <p>Status: ✅ Done</p>
+      <p>Status: ✅ Done</p><a class="view-zoho-btn" href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000012180023" target="_blank">View on Zoho</a>
     </div>
-</div>
+  </div>
+
+  <script>
+    // Add filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const tasks = document.querySelectorAll('.task');
+      
+      // Add click event to each filter button
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Get filter value
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Show/hide tasks based on filter
+          tasks.forEach(task => {
+            if (filterValue === 'all') {
+              task.style.display = 'block';
+            } else {
+              if (task.getAttribute('data-status') === filterValue) {
+                task.style.display = 'block';
+              } else {
+                task.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
 
 
 
@@ -513,7 +1251,12 @@
       <h3>📜 Description:</h3>
       <p>If 'Pool Opening' is 'Yes', first job is 'Pool Opening'. If 'No', jobs start from the contract start. Users can
         add 'Pool Closing' job with a selected date.</p>
-      <p>Testing Link: https://zupersoftinc.sharepoint.com/:v:/s/PS/EfnP_f1ICxlPlT7o7Mq5XzYB0rudikjFja2RPyKU8IkWiQ?e=0RWbuM</p> 
+      <p>
+        <a href="https://zupersoftinc.sharepoint.com/:v:/s/PS/EfnP_f1ICxlPlT7o7Mq5XzYB0rudikjFja2RPyKU8IkWiQ?e=0RWbuM"
+          target="_blank" rel="noopener noreferrer">
+          🎥Testing Video
+        </a>
+      </p>
       <h3>🧩 Case 1: At Creation</h3>
       <ul>
         <li>📅 If dates match, create "Pool Closing" job, update expiry, delete future jobs, deactivate contract.</li>
@@ -539,7 +1282,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('taskModal6')">&times;</span>
 
-      <h1>💳 Solution Request - One80 Integration</h1>
+      <h1>💳 Custom Integration - One80 - Refunds</h1>
 
       <h3>📜 Description:</h3>
       <p>Integrate with One80 for tracking credit card payments on quotes and invoices. Feasibility check required.</p>
@@ -596,7 +1339,7 @@
       <p>Create a custom scheduling page with an embedded widget to let customers schedule jobs using a unique link.</p>
       <h3>📜 Test recording link:</h3>
       <p>https://zupersoftinc.sharepoint.com/:v:/s/PS/EQeqbz7iMmhFgg9mjiPvDuEBCbo1_5tHyT36_d3-iwU5dQ?e=TQw2td</p>
-      
+
 
 
 
@@ -765,7 +1508,13 @@
       <span class="close" onclick="closeModal('taskModal10')">&times;</span>
 
       <h1>🐞 Bug - Reverse Update Not Working</h1>
-<p>Testing Link: https://zupersoftinc.sharepoint.com/:v:/s/PS/Ech5LqDTaH5Pg0WdJ_yVhh4BnUfYMr0bElAtFxxY5bhg2w?e=pRDyCZ</p>
+
+      <p>
+        <a href="https://zupersoftinc.sharepoint.com/:v:/s/PS/Ech5LqDTaH5Pg0WdJ_yVhh4BnUfYMr0bElAtFxxY5bhg2w?e=pRDyCZ"
+          target="_blank" rel="noopener noreferrer">
+          🎥Testing Video
+        </a>
+      </p>
       <div class="section step">
         <strong>📝 Description:</strong><br>
         Reverse updates from Physical Site Inspection → Site Inspection → New-Installation → Deal in FreshSales are
@@ -877,7 +1626,13 @@
       <span class="close" onclick="closeModal('taskModal14')">&times;</span>
 
       <h1>📩 Reverse Update Notification - Wetility</h1>
-<p>Testing Link: https://zupersoftinc.sharepoint.com/:v:/s/PS/Eddxd3aKeohNuslaGhcpMh8Bw3XIl4Ja02BKepp5grQXYQ?e=PwQ6wZ</p>
+
+      <p>
+        <a href="https://zupersoftinc.sharepoint.com/:v:/s/PS/Eddxd3aKeohNuslaGhcpMh8Bw3XIl4Ja02BKepp5grQXYQ?e=PwQ6wZ"
+          target="_blank" rel="noopener noreferrer">
+          🎥 Testing Video
+        </a>
+      </p>
       <div class="section step">
         <strong>📝 Description:</strong><br>
         Trigger email notification when custom field changes are detected during a reverse update.
@@ -1077,7 +1832,13 @@
       <span class="close" onclick="closeModal('taskModal21')">&times;</span>
 
       <h1>🔧 Custom Work: Update the Job Notes with Associated Property Notes</h1>
-<p> Testing Link: https://zupersoftinc.sharepoint.com/:v:/s/PS/EQF1fbuQ2nlPqRgBouNrvvwB9sXwNqO-QFAQFfWhXK32_A?e=QBkhk1</p>
+      <p>
+        <a href="https://zupersoftinc.sharepoint.com/:v:/s/PS/EQF1fbuQ2nlPqRgBouNrvvwB9sXwNqO-QFAQFfWhXK32_A?e=QBkhk1"
+          target="_blank" rel="noopener noreferrer">
+          🎥Testing Video
+        </a>
+      </p>
+
       <div class="section step">
         <strong>📝 Description:</strong><br>
         On creation of a job, the notes from the associated Property need to be populated in the Job notes.
@@ -1225,183 +1986,200 @@
     </div>
   </div>
   <!-- Modal 26 -->
-<div class="modal" id="taskModal26">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal26')">&times;</span>
+  <div class="modal" id="taskModal26">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal26')">&times;</span>
 
-    <h1>🔗 Officient<>Zuper Integration</h1>
+      <h1>🔗 Officient<>Zuper Integration</h1>
 
-    <div class="section step">
-      <strong>📝 Description:</strong><br>
-      The integration between Officient.io and Zuper is designed to streamline leave and attendance data management. The goal is to automatically sync leave data from Officient to Zuper, reducing manual data entry and improving efficiency.
-    </div>
+      <div class="section step">
+        <strong>📝 Description:</strong><br>
+        The integration between Officient.io and Zuper is designed to streamline leave and attendance data management.
+        The goal is to automatically sync leave data from Officient to Zuper, reducing manual data entry and improving
+        efficiency.
+      </div>
 
-    <h3>🎯 Use Case / Workflow:</h3>
-    <ul>
-      <li>📅 Sync approved leave requests (sick leave, holiday, vacation) from Officient to Zuper in real-time.</li>
-      <li>🔄 Automatically update changes in leave requests (cancellations, extensions) in Zuper.</li>
-      <li>📊 Centralize workforce availability and attendance data from Officient to generate consolidated reports in Zuper.</li>
-    </ul>
-
-    <h3>🔧 Expected Outcome:</h3>
-    <ul>
-      <li>Automate the synchronization of leave data from Officient to Zuper.</li>
-      <li>Provide real-time updates for employee availability in Zuper.</li>
-      <li>Centralize attendance and workforce availability reports in Zuper for easy management.</li>
-    </ul>
-
-    <h3>🔗 Technical Details:</h3>
-    <p><strong>API Documentation:</strong> <a href="https://apidocs.officient.io/" target="_blank">Officient API</a></p>
-    <p><strong>Login Credentials:</strong> Not yet provided.</p>
-    <p><strong>Feasibility Study:</strong> Completed and deemed feasible.</p>
-
-    <h3>🔗 Related Task:</h3>
-    <p><a href="https://projects.zoho.com/portal/zuperinc#zp/projects/1832517000009345437/tasks/custom-view/1832517000005003001/list/task-detail/1832517000010785433?group_by=none" target="_blank">View Task</a></p>
-  </div>
-</div>
-<!-- Modal 27 -->
-<div class="modal" id="taskModal27">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal27')">&times;</span>
-
-    <h1>📝 Change Request - Additional Changes on the Document</h1>
-
-    <div class="section step">
-      <strong>📋 Description:</strong><br>
-      The customer has requested the following changes to the document:
-    </div>
-
-    <h3>🎯 Customer Requirements:</h3>
-    <ul>
-      <li>❌ Remove the text "Welcome to Wetility".</li>
-      <li>🔠 Increase the font size for "Please confirm your details and report your issue."</li>
-      <li>📝 Change the comment box label for "other issues" under the Technical category to "Describe other technical issue you are facing" instead of "Enter reason".</li>
-      <li>🔄 Rename the "Serial Number" field to "Inverter Serial Number".</li>
-      <li>📸 Add the note below the image attachment: "Please give camera and gallery access to your web browser for adding images."</li>
-      <li>🔤 In the job title, ensure there is a space between the customer's first and last name when a job is created.</li>
-      <li>📧 Modify the error message for unregistered emails to "Unrecognized Email. Kindly log your ticket with the email address associated with your account".</li>
-      <li>📞 Validate the customer details for email, contact number, and address, with appropriate error messages if mismatches occur:</li>
+      <h3>🎯 Use Case / Workflow:</h3>
       <ul>
-        <li>Contact Number: "Unrecognized contact number. Kindly log your ticket with the contact number associated with your account".</li>
-        <li>Address: "Unrecognized address. Kindly log your ticket with the address associated with your account".</li>
+        <li>📅 Sync approved leave requests (sick leave, holiday, vacation) from Officient to Zuper in real-time.</li>
+        <li>🔄 Automatically update changes in leave requests (cancellations, extensions) in Zuper.</li>
+        <li>📊 Centralize workforce availability and attendance data from Officient to generate consolidated reports in
+          Zuper.</li>
       </ul>
-      <li>🛠️ Populate the issues, sub-issues, and comments under the custom field section for "Unplanned Maintenance" jobs.</li>
-    </ul>
 
-    <h3>🔧 Module Impacted:</h3>
-    <p>Static Page</p>
-
-    <h3>🔗 Reusable Catalog Reference:</h3>
-    <p>NA</p>
-
-    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
-    <p>Changes to existing Automation</p>
-
-    <h3>📎 Parent Task:</h3>
-    <p>Existing task references the same module and changes.</p>
-  </div>
-</div>
-<!-- Modal 28 -->
-<div class="modal" id="taskModal28">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal28')">&times;</span>
-
-    <h1>📊 Custom Report - Quotes Quarterly and Monthly</h1>
-
-    <div class="section step">
-      <strong>📋 Description:</strong><br>
-      Meadowbrook requires a custom report based on the Quote module.
-    </div>
-
-    <h3>🎯 Requirement Details:</h3>
-    <ul>
-      <li>📑 The attached report contains the field mapping (highlighted in Red Text).</li>
-      <li>📊 There are multiple worksheets in the attached Excel file:</li>
+      <h3>🔧 Expected Outcome:</h3>
       <ul>
-        <li>1️⃣ Quarterly Summary Report</li>
-        <li>2️⃣ Monthly Summary Report (Contains all the months of the selected Quarter)</li>
-        <li>3️⃣ Quarterly Detailed Report</li>
-        <li>4️⃣ Monthly Detailed Report (Contains all the months of the selected Quarter)</li>
+        <li>Automate the synchronization of leave data from Officient to Zuper.</li>
+        <li>Provide real-time updates for employee availability in Zuper.</li>
+        <li>Centralize attendance and workforce availability reports in Zuper for easy management.</li>
       </ul>
-    </ul>
 
-    <h3>🔧 Module Impacted:</h3>
-    <p>Quote Module</p>
+      <h3>🔗 Technical Details:</h3>
+      <p><strong>API Documentation:</strong> <a href="https://apidocs.officient.io/" target="_blank">Officient API</a>
+      </p>
+      <p><strong>Login Credentials:</strong> Not yet provided.</p>
+      <p><strong>Feasibility Study:</strong> Completed and deemed feasible.</p>
 
-    <h3>📎 Reusable Catalog Reference:</h3>
-    <p>NA</p>
-
-    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
-    <p>New Custom Report</p>
-
-    <h3>📎 Attached Report:</h3>
-    <p>Field mapping details and report structure provided in the attached Excel sheet.</p>
-  </div>
-</div>
-<!-- Modal 29 -->
-<div class="modal" id="taskModal29">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal29')">&times;</span>
-
-    <h1>📅 Changes Needed in the Scheduling Widget</h1>
-
-    <div class="section step">
-      <strong>📋 Description:</strong><br>
-      Wesgroup requires changes to the scheduling widget to improve the scheduling experience.
+      <h3>🔗 Related Task:</h3>
+      <p><a
+          href="https://projects.zoho.com/portal/zuperinc#zp/projects/1832517000009345437/tasks/custom-view/1832517000005003001/list/task-detail/1832517000010785433?group_by=none"
+          target="_blank">View Task</a></p>
     </div>
-
-    <h3>🎯 Requirements:</h3>
-    <ul>
-      <li>1️⃣ The date format should be "18-April-2025" (DD-Month-YYYY).</li>
-      <li>2️⃣ After scheduling through the link, update the status to "Scheduled".</li>
-    </ul>
-
-    <h3>🔧 Fixes to be Added:</h3>
-    <ul>
-      <li>1️⃣ The email notification sent after job scheduling currently contains the line "sent from n8n." This needs to be removed.</li>
-    </ul>
-
-    <h3>⚙️ Module Impacted:</h3>
-    <p>Scheduling Widget & Email Notifications</p>
-
-    <h3>📎 Reusable Catalog Reference:</h3>
-    <p>NA</p>
-
-    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
-    <p>Changes to Existing Scheduling Workflow</p>
   </div>
-</div>
-<!-- Modal 30 -->
-<div class="modal" id="taskModal30">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('taskModal30')">&times;</span>
+  <!-- Modal 27 -->
+  <div class="modal" id="taskModal27">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal27')">&times;</span>
 
-    <h1>📝 Update the Customer Notes</h1>
+      <h1>📝 Change Request - Additional Changes on the Document</h1>
 
-    <div class="section step">
-      <strong>📋 Description:</strong><br>
-      Mid American Gunite Pools requires an update to the customer notes in Zuper based on extracted notes from Pool Brain.
+      <div class="section step">
+        <strong>📋 Description:</strong><br>
+        The customer has requested the following changes to the document:
+      </div>
+
+      <h3>🎯 Customer Requirements:</h3>
+      <ul>
+        <li>❌ Remove the text "Welcome to Wetility".</li>
+        <li>🔠 Increase the font size for "Please confirm your details and report your issue."</li>
+        <li>📝 Change the comment box label for "other issues" under the Technical category to "Describe other technical
+          issue you are facing" instead of "Enter reason".</li>
+        <li>🔄 Rename the "Serial Number" field to "Inverter Serial Number".</li>
+        <li>📸 Add the note below the image attachment: "Please give camera and gallery access to your web browser for
+          adding images."</li>
+        <li>🔤 In the job title, ensure there is a space between the customer's first and last name when a job is
+          created.</li>
+        <li>📧 Modify the error message for unregistered emails to "Unrecognized Email. Kindly log your ticket with the
+          email address associated with your account".</li>
+        <li>📞 Validate the customer details for email, contact number, and address, with appropriate error messages if
+          mismatches occur:</li>
+        <ul>
+          <li>Contact Number: "Unrecognized contact number. Kindly log your ticket with the contact number associated
+            with your account".</li>
+          <li>Address: "Unrecognized address. Kindly log your ticket with the address associated with your account".
+          </li>
+        </ul>
+        <li>🛠️ Populate the issues, sub-issues, and comments under the custom field section for "Unplanned Maintenance"
+          jobs.</li>
+      </ul>
+
+      <h3>🔧 Module Impacted:</h3>
+      <p>Static Page</p>
+
+      <h3>🔗 Reusable Catalog Reference:</h3>
+      <p>NA</p>
+
+      <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+      <p>Changes to existing Automation</p>
+
+      <h3>📎 Parent Task:</h3>
+      <p>Existing task references the same module and changes.</p>
     </div>
-
-    <h3>🎯 Requirement:</h3>
-    <ul>
-      <li>1️⃣ Extract customer notes from the parent task.</li>
-      <li>2️⃣ Update the customers in Zuper with the notes that have been extracted from Pool Brain.</li>
-    </ul>
-
-    <h3>🔗 Related Task:</h3>
-    <p><a href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011915333">Related Task on Zoho</a></p>
-
-    <h3>⚙️ Module Impacted:</h3>
-    <p>Customer Notes & Task Management</p>
-
-    <h3>📎 Reusable Catalog Reference:</h3>
-    <p>NA</p>
-
-    <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
-    <p>Changes to Existing Notes Sync Process</p>
   </div>
-</div>
+  <!-- Modal 28 -->
+  <div class="modal" id="taskModal28">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal28')">&times;</span>
+
+      <h1>📊 Custom Report - Quotes Quarterly and Monthly</h1>
+
+      <div class="section step">
+        <strong>📋 Description:</strong><br>
+        Meadowbrook requires a custom report based on the Quote module.
+      </div>
+
+      <h3>🎯 Requirement Details:</h3>
+      <ul>
+        <li>📑 The attached report contains the field mapping (highlighted in Red Text).</li>
+        <li>📊 There are multiple worksheets in the attached Excel file:</li>
+        <ul>
+          <li>1️⃣ Quarterly Summary Report</li>
+          <li>2️⃣ Monthly Summary Report (Contains all the months of the selected Quarter)</li>
+          <li>3️⃣ Quarterly Detailed Report</li>
+          <li>4️⃣ Monthly Detailed Report (Contains all the months of the selected Quarter)</li>
+        </ul>
+      </ul>
+
+      <h3>🔧 Module Impacted:</h3>
+      <p>Quote Module</p>
+
+      <h3>📎 Reusable Catalog Reference:</h3>
+      <p>NA</p>
+
+      <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+      <p>New Custom Report</p>
+
+      <h3>📎 Attached Report:</h3>
+      <p>Field mapping details and report structure provided in the attached Excel sheet.</p>
+    </div>
+  </div>
+  <!-- Modal 29 -->
+  <div class="modal" id="taskModal29">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal29')">&times;</span>
+
+      <h1>📅 Changes Needed in the Scheduling Widget</h1>
+
+      <div class="section step">
+        <strong>📋 Description:</strong><br>
+        Wesgroup requires changes to the scheduling widget to improve the scheduling experience.
+      </div>
+
+      <h3>🎯 Requirements:</h3>
+      <ul>
+        <li>1️⃣ The date format should be "18-April-2025" (DD-Month-YYYY).</li>
+        <li>2️⃣ After scheduling through the link, update the status to "Scheduled".</li>
+      </ul>
+
+      <h3>🔧 Fixes to be Added:</h3>
+      <ul>
+        <li>1️⃣ The email notification sent after job scheduling currently contains the line "sent from n8n." This needs
+          to be removed.</li>
+      </ul>
+
+      <h3>⚙️ Module Impacted:</h3>
+      <p>Scheduling Widget & Email Notifications</p>
+
+      <h3>📎 Reusable Catalog Reference:</h3>
+      <p>NA</p>
+
+      <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+      <p>Changes to Existing Scheduling Workflow</p>
+    </div>
+  </div>
+  <!-- Modal 30 -->
+  <div class="modal" id="taskModal30">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('taskModal30')">&times;</span>
+
+      <h1>📝 Update the Customer Notes</h1>
+
+      <div class="section step">
+        <strong>📋 Description:</strong><br>
+        Mid American Gunite Pools requires an update to the customer notes in Zuper based on extracted notes from Pool
+        Brain.
+      </div>
+
+      <h3>🎯 Requirement:</h3>
+      <ul>
+        <li>1️⃣ Extract customer notes from the parent task.</li>
+        <li>2️⃣ Update the customers in Zuper with the notes that have been extracted from Pool Brain.</li>
+      </ul>
+
+      <h3>🔗 Related Task:</h3>
+      <p><a href="https://projects.zoho.com/portal/zuperinc#zp/task-detail/1832517000011915333">Related Task on Zoho</a>
+      </p>
+
+      <h3>⚙️ Module Impacted:</h3>
+      <p>Customer Notes & Task Management</p>
+
+      <h3>📎 Reusable Catalog Reference:</h3>
+      <p>NA</p>
+
+      <h3>⚙️ New Automation or Changes to Existing Automation:</h3>
+      <p>Changes to Existing Notes Sync Process</p>
+    </div>
+  </div>
 
 
   <script>
